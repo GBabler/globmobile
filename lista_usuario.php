@@ -11,25 +11,26 @@ session_destroy();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista de Usuarios</title>
+	<link rel="stylesheet" type="text/css" href="./css/lista_usuario.css">
 </head>
-
-<body bgcolor="#4F4F4F" text="#DCDCDC";>
-	<table border="5" align="center" width="1000">
+<body>
+	<table align="center">
 		<thead>
-			<div align="center"><br>
-			<font face="Arial" size="4"><i><span>Bem Vindo	 <?php echo "$_SESSION[nome]"; ?> !</span></font></i>
+			<div><br>
+			<?php echo "$_SESSION[nome]"; ?>
+			<a href="logout.php">LOGOUT</a>
 		</div><br>
-			<div align="center">
+			<div>
 				<a href="inserir_usuario.php">NOVO USUARIO</a>
 				&nbsp &nbsp
 				<a href="lista_adm.php">ADMINISTRADORES</a>
 				&nbsp &nbsp
-				<a href="logout.php">LOGOUT</a>
 			</div>
 			<br>
 			<tr">

@@ -24,16 +24,17 @@ session_destroy();
 		<thead>
 			<div class="user_info">
 			<?php echo "$_SESSION[nome]"; ?>
+			|
+			<a href="logout.php">Logout</a>
 		 	</div>
 			<div class="cab_tabela">
 				<a href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
 				&nbsp &nbsp
 				<a href="lista_usuario.php">TABELA DE CADASTRADOS</a>
 				&nbsp &nbsp
-				<a href="logout.php">LOGOUT</a>
 			</div>
 			<br>
-			<tr">
+			<tr" class="texto_link">
 				<th>NOME</th>
 				<th>EMAIL</th>
 				<th>AÇÃO</th>
