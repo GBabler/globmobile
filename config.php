@@ -1,6 +1,6 @@
 <?php
 
-$dsn = "mysql:dbname=loja";
+$dsn = "mysql:dbname=globmobile";
 $dbuser = "root";
 $dbpass = "";
 

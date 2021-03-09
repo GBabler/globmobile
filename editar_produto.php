@@ -23,7 +23,7 @@ $quantidade = addslashes($_POST['quantidade']); // variável senha com criptogra
 $sql = "UPDATE produtos SET nome = '$nome', marca = '$marca', quantidade = '$quantidade' WHERE id = '$id'";
 
 $sql = $pdo->query($sql); //executa o insert.
-header("Location: prod_list.php"); //após a execução do insert, retorna para a página de consulta dos dados.
+header("Location: lista_produtos.php"); //após a execução do insert, retorna para a página de consulta dos dados.
 }
 
 //apresenta apenas os dados do ïd que foi selecionado
@@ -35,7 +35,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	// $teste = var_dump($dado); variavel para pegar o valor var_dump
 	// return $dado; retorna o var_dump
 }else{
-	header("Location: prod_list.php");
+	header("Location: lista_produtos.php");
 }
 ?>
 
@@ -62,7 +62,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<input type="text" name="quantidade" value="<?php echo $dado['quantidade']?>"/> </br>
 	<button type="submit">Salvar</button>
 
-	<a href="prod_list.php"><button type="button">Cancelar</button></a>
+	<a href="lista_produtos.php"><button type="button">Cancelar</button></a>
 </form>
 </body>
 

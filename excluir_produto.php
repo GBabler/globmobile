@@ -15,8 +15,8 @@ if(isset($_GET['id']) && empty($_GET['id']) == false) {
 
 	$sql = $pdo->query($sql);
 
-	header("Location: prod_list.php");
+	header("Location: lista_produtos.php");
 } else {
-	header("Location: prod_list.php");
+	header("Location: lista_produtos.php");
 }
 ?>

@@ -25,9 +25,9 @@ session_destroy();
 			<font face="Arial" size="4"><i><span>Bem Vindo	 <?php echo "$_SESSION[nome]"; ?> !</span></font></i>
 		</div><br>
 			<div align="center">
-				<a href="insert_user.php">INSERIR USUÁRIO</a>
+				<a href="inserir_usuario.php">INSERIR USUÁRIO</a>
 				&nbsp &nbsp
-				<a href="prod_list.php">TABELA DE PRODUTOS</a>
+				<a href="lista_produtos.php">TABELA DE PRODUTOS</a>
 				&nbsp &nbsp
 				<a href="logout.php">LOGOUT</a>
 			</div>
@@ -56,13 +56,13 @@ session_destroy();
 				$inicio = ($pagina * $limite) - $limite;
 
 				//conta o numero de linhas da tabela
-				$qtdRegistros = $pdo->query('select count(id) from usuarios')->fetchColumn();
+				$qtdRegistros = $pdo->query('select count(id) from cadastro')->fetchColumn();
 
 				//Determina o total de páginas
 				$total_paginas = Ceil($qtdRegistros / $limite);
 
 				//seleciona os registros do php
-				$sql = "select * from usuarios LIMIT $inicio, $limite"; //limite no seleqt mysql
+				$sql = "select * from cadastro LIMIT $inicio, $limite"; //limite no seleqt mysql
 
 				//executa o select
 				$sql = $pdo->query($sql);
@@ -74,8 +74,8 @@ session_destroy();
 			echo '<td align="center">'.$user['nome'].'</td>';
 			echo '<td align="center">'.$user['email'].'</td>';
 			echo '<td align="center">
-				<a href="delete_user.php?id='.$user['id'].' "><font color="blue"> APAGAR USUÁRIO </font> </a><br>
-				<a href="user_edit.php?id='.$user['id'].' "><font color="blue"> ALTERAR USUÁRIO </font> </a>
+				<a href="excluir_usuario.php?id='.$user['id'].' "><font color="blue"> APAGAR USUÁRIO </font> </a><br>
+				<a href="editar_usuario.php?id='.$user['id'].' "><font color="blue"> ALTERAR USUÁRIO </font> </a>
 				</td>';
 		echo '</tr>';
 	}

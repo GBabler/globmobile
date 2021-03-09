@@ -20,14 +20,14 @@ $email = addslashes($_POST['email']); // varável email.
 $senha = md5(addslashes($_POST['senha'])); // variável senha com criptografia MD5
 
 //altera os registros no BD, apenas do id selecionado.
-$sql = "UPDATE usuarios SET nome = '$nome', email = '$email', senha = '$senha' WHERE id = '$id'";
+$sql = "UPDATE cadastro SET nome = '$nome', email = '$email', senha = '$senha' WHERE id = '$id'";
 
 $sql = $pdo->query($sql); //executa o insert.
 header("Location: user_list.php"); //após a execução do insert, retorna para a página de consulta dos dados.
 }
 
 //apresenta apenas os dados do ïd que foi selecionado
-$sql = "SELECT * FROM usuarios WHERE id = '$id' ";
+$sql = "SELECT * FROM cadastro WHERE id = '$id' ";
 $sql = $pdo->query($sql); // executa o select
 
 if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
@@ -62,7 +62,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<input type="password" name="senha" value="<?php echo $dado['senha']?>"/> </br>
 	<button type="submit">Salvar</button>
 
-	<a href="insert_user.php"><button type="button">Cancelar</button></a>
+	<a href="inserir_usuario.php"><button type="button">Cancelar</button></a>
 </form>
 </body>
 

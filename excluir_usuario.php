@@ -11,7 +11,7 @@ session_destroy();
 if(isset($_GET['id']) && empty($_GET['id']) == false) {
 	$id = addslashes($_GET['id']);
 
-	$sql = "DELETE FROM usuarios WHERE id = '$id'";
+	$sql = "DELETE FROM cadastro WHERE id = '$id'";
 
 	$sql = $pdo->query($sql);
 
