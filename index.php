@@ -39,7 +39,7 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,8 +62,8 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
                     <div class="div_acesse">
                     <label>Acesse</label>
                     </div>
-                    <input class="inp_name" type="text" name="login" placeholder="E-mail" autocomplete="off" required=""><br>
-                    <input class="inp_senha" type="password" name="senha" placeholder="Senha" autocomplete="off" >
+                    <input class="inp_name" type="text" name="email" placeholder="E-mail" autocomplete="off" required=""><br>
+                    <input class="inp_senha" type="password" name="senha" placeholder="Senha" autocomplete="off ">
 
                     <div class="buttons">
                     <button class="buttons_form entrarButton" type="submit">Entrar</button>

@@ -12,19 +12,20 @@ session_destroy();
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista de administradores</title>
+	<link rel="stylesheet" type="text/css" href="./css/lista_adm.css">
 </head>
-
-<body bgcolor="#4F4F4F" text="#DCDCDC";>
-	<table border="5" align="center" width="1000">
+<body>
+	<table>
 		<thead>
-			<div align="center"><br>
-			<font face="Arial" size="4"><i><span>Bem Vindo	 <?php echo "$_SESSION[nome]"; ?> !</span></font></i>
-		</div><br>
-			<div align="center">
+			<div class="user_info">
+			<?php echo "$_SESSION[nome]"; ?>
+		 	</div>
+			<div>
 				<a href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
 				&nbsp &nbsp
 				<a href="lista_usuario.php">TABELA DE CADASTRADOS</a>
@@ -82,7 +83,7 @@ session_destroy();
 
 ?>
 
-</tbody>
+	</tbody>
 </table>
 <br>
 <div align="center">

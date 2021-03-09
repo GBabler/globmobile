@@ -1,0 +1,34 @@
+*,body {
+
+	padding:0;
+	margin:0;
+
+}
+
+/*---------------------CABECALHO------------------------*/
+.user_info{
+    text-align: right;
+    
+}
+
+
+
+
+
+/*---------------------CABECALHO------------------------*/
+body{
+
+background-color: beige;
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+
+
+}
+
+table, th, td{
+    
+    width: 1000px;
+    color: rgb(0, 0, 0);
+    border: 2px solid black ;
+    border-collapse: collapse;
+}
