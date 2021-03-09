@@ -1,7 +1,6 @@
-*,body {
+* {
 
-	padding:0;
-	margin:0;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -18,7 +17,7 @@
 /*---------------------CABECALHO------------------------*/
 body{
 
-background-color: beige;
+background-color: rgb(255, 255, 255);
 font-family: Arial, Helvetica, sans-serif;
 text-align: center;
 
@@ -31,4 +30,27 @@ table, th, td{
     color: rgb(0, 0, 0);
     border: 2px solid black ;
     border-collapse: collapse;
+}
+
+th, td{
+
+   padding: 5px 10px;
+   
+}
+
+th{
+
+    background-color: blue;
+    color: white;
+
+}
+/*even aplica em todos os elementos pares*/
+table tr:nth-child(even){
+    background-color: white;
+
+}
+/*even aplica em todos os elementos impares*/
+table tr:nth-child(even){
+
+    background-color: rgba(198, 228, 255, 0.767);
 }

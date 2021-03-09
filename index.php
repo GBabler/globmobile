@@ -73,9 +73,8 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
             </div>
         </div>
         
-        <footer class="footer">  
-            <p>© GBabler </p> 
-            <p>MDrive Thru</p>
+        <footer class="footer">   
+            <p>© GlobMobile</p>
         </footer>
     </div>
 	

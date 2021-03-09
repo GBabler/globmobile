@@ -20,12 +20,12 @@ session_destroy();
 	<link rel="stylesheet" type="text/css" href="./css/lista_adm.css">
 </head>
 <body>
-	<table>
+	<table align="center">
 		<thead>
 			<div class="user_info">
 			<?php echo "$_SESSION[nome]"; ?>
 		 	</div>
-			<div>
+			<div class="cab_tabela">
 				<a href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
 				&nbsp &nbsp
 				<a href="lista_usuario.php">TABELA DE CADASTRADOS</a>
