@@ -17,7 +17,7 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 	$sql = "INSERT INTO cadastro SET NOME = '$nome', email = '$email', senha = '$senha' ";
 
 	$sql = $pdo->query($sql);
-	header ("Location: user_list");
+	header ("Location: lista_usuario.php");
 }
 
 ?>
@@ -49,7 +49,7 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 
 		<br>
 		<button type="submit" align="center">Salvar</button><br><p>
-		<a href="user_list"><button type="button" align="center">Voltar</button><br><p></a>
+		<a href="lista_usuario.php"><button type="button" align="center">Voltar</button><br><p></a>
 	</form>
 
 </body>

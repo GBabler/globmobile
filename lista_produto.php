@@ -27,7 +27,7 @@ session_destroy();
 			<div align="center">
 				<a href="inserir_produto.php">INSERIR NOVO PRODUTO</a>
 				&nbsp &nbsp
-				<a href="user_list.php">USUÁRIOS</a>
+				<a href="lista_usuario.php">USUÁRIOS</a>
 				&nbsp &nbsp
 				<a href="logout.php">LOGOUT</a>
 			</div>
@@ -78,7 +78,7 @@ session_destroy();
 			echo '<td align="center">'.$user['quantidade'].'</td>';
 			echo '<td align="center">
 				<a href="editar_produto.php?id='.$user['id'].' "><font color="blue"> ALTERAR PRODUTO </font> </a><br>
-				<a href="prod_menos.php?id='.$user['id'].' "><font color="blue"> ALTERAR QUANTIDADE </font> </a>
+				<a href="remover_produto.php?id='.$user['id'].' "><font color="blue"> ALTERAR QUANTIDADE </font> </a>
 				</td>';
 			echo '<td align="center">
 			<a href="excluir_produto.php?id='.$user['id'].' "><font color="blue"> APAGAR PRODUTO </font> </a><br>
@@ -95,12 +95,12 @@ session_destroy();
 <div align="center">
 <?php
 		echo '<div>';
-			echo '<a href="user_list.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
+			echo '<a href="lista_usuario.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
 			
 			for ($i=1; $i <= $total_paginas; $i++){ //looping conforme o numero de paginas
-				echo '<a href="user_list.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
+				echo '<a href="lista_usuario.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
 				}
-				echo '<a class="page.link" href="user_list.php?pag='.$total_paginas.'">ULTIMA</a>';
+				echo '<a class="page.link" href="lista_usuario.php?pag='.$total_paginas.'">ULTIMA</a>';
 				echo '</div>'; //ultima pagina
 				?>
 

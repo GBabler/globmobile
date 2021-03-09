@@ -62,7 +62,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<input type="text" name="quantidade" value="<?php echo $dado['quantidade']?>"/> </br>
 	<button type="submit">Salvar</button>
 
-	<a href="lista_produtos.php"><button type="button">Cancelar</button></a>
+	<a href="lista_produto.php"><button type="button">Cancelar</button></a>
 </form>
 </body>
 

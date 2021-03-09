@@ -17,7 +17,7 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 	$sql = "INSERT INTO produtos SET nome = '$nome', marca = '$marca', quantidade = '$quantidade' ";
 
 	$sql = $pdo->query($sql);
-	header ("Location: lista_produtos");
+	header ("Location: lista_produto");
 }
 
 ?>
@@ -49,7 +49,7 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 
 		<br>
 		<button type="submit" align="center">Inserir</button><br><p>
-		<a href="lista_produtos"><button type="button" align="center">Tabela de Produtos</button><br><p></a>
+		<a href="lista_produto.php"><button type="button" align="center">Tabela de Produtos</button><br><p></a>
 	</form>
 
 </body>

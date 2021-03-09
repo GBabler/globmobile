@@ -20,7 +20,7 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
 		$_SESSION['email'] = $dado['email'];
 		$_SESSION['senha'] = $dado['senha'];
 
-			header("Location: user_list");
+			header("Location: lista_usuario.php");
 
 		} else {
 
