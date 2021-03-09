@@ -23,7 +23,7 @@ $marca = addslashes($_POST['email']); // variável email.
 $sql = "UPDATE usuarios SET nome = '$nome', email = '$email' WHERE id = '$id'";
 
 $sql = $pdo->query($sql); //executa o insert.
-header("Location: lista_produto.php"); //após a execução do insert, retorna para a página de consulta dos dados.
+header("Location: lista_usuario.php"); //após a execução do insert, retorna para a página de consulta dos dados.
 }
 
 //apresenta apenas os dados do ïd que foi selecionado
@@ -35,7 +35,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	// $teste = var_dump($dado); variavel para pegar o valor var_dump
 	// return $dado; retorna o var_dump
 }else{
-	header("Location: lista_produto.php");
+	header("Location: lista_usuario.php");
 }
 ?>
 
@@ -62,7 +62,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<input type="text" name="quantidade" value="<?php echo $dado['quantidade']?>"/> </br>
 	<button type="submit">Salvar</button>
 
-	<a href="lista_produto.php"><button type="button">Cancelar</button></a>
+	<a href="lista_usuario.php"><button type="button">Cancelar</button></a>
 </form>
 </body>
 

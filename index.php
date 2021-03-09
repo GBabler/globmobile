@@ -41,29 +41,43 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GlobMobile</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
 </head>
 <body>
-	<div align="center">
-		<form method="POST">
 
-<div>
-	<h1 style="text-align: center;"><strong><font color="white">LOGIN</font></strong></h1>
-</div>
+<div class="container">
+        <header class="cabecalho">
+        </header>
+        
+        <div class="div_login">
+            <div class="logo">
+                <img src="./img/logomarcaindex.png" alt="logo">
+            </div>
+            <div class="form_Login">
+                <form method="POST" class="form">
+                    <div class="div_acesse">
+                    <label>Acesse</label>
+                    </div>
+                    <input class="inp_name" type="text" name="login" placeholder="E-mail" autocomplete="off" required=""><br>
+                    <input class="inp_senha" type="password" name="senha" placeholder="Senha" autocomplete="off" >
 
-<div>
-	<label>EMAIL</label>
-	<input type="text" name="email" placeholder="e-mail" required="">
-</div><br>
-
-<div>
-	<label>SENHA</label>
-	<input type="password" name="senha" placeholder="Senha" required="">
-</div><br>
-
-<button type="submit"><strong>ENTRAR</strong></button>
-</form>
-</div>
+                    <div class="buttons">
+                    <button class="buttons_form entrarButton" type="submit">Entrar</button>
+                    <button class="buttons_form registerButton" type="button">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <footer class="footer">  
+            <p>© GBabler </p> 
+            <p>MDrive Thru</p>
+        </footer>
+    </div>
+	
 </body>
 </html>

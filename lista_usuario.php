@@ -25,9 +25,9 @@ session_destroy();
 			<font face="Arial" size="4"><i><span>Bem Vindo	 <?php echo "$_SESSION[nome]"; ?> !</span></font></i>
 		</div><br>
 			<div align="center">
-				<a href="inserir_produto.php">INSERIR NOVO PRODUTO</a>
+				<a href="inserir_usuario.php">NOVO USUARIO</a>
 				&nbsp &nbsp
-				<a href="lista_adm.php">USUÁRIOS</a>
+				<a href="lista_adm.php">ADMINISTRADORES</a>
 				&nbsp &nbsp
 				<a href="logout.php">LOGOUT</a>
 			</div>
@@ -78,10 +78,10 @@ session_destroy();
 			echo '<td align="center">'.$user['email'].'</td>';
 			
 			echo '<td align="center">
-				<a href="editar_produto.php?id='.$user['id'].' "><font color="black"> Editar Usuario </font> </a><br>
+				<a href="editar_usuario.php?id='.$user['id'].' "><font color="black"> Editar Usuario </font> </a><br>
 				</td>';
 			echo '<td align="center">
-			<a href="excluir_produto.php?id='.$user['id'].' "><font color="blue"> Remover Usuario </font> </a><br>
+			<a href="excluir_usuario.php?id='.$user['id'].' "><font color="blue"> Remover Usuario </font> </a><br>
 			</td>';
 
 		echo '</tr>';

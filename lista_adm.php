@@ -25,9 +25,9 @@ session_destroy();
 			<font face="Arial" size="4"><i><span>Bem Vindo	 <?php echo "$_SESSION[nome]"; ?> !</span></font></i>
 		</div><br>
 			<div align="center">
-				<a href="inserir_usuario.php">INSERIR USUÁRIO</a>
+				<a href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
 				&nbsp &nbsp
-				<a href="lista_produto.php">TABELA DE PRODUTOS</a>
+				<a href="lista_usuario.php">TABELA DE CADASTRADOS</a>
 				&nbsp &nbsp
 				<a href="logout.php">LOGOUT</a>
 			</div>

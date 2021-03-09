@@ -1,0 +1,126 @@
+/* INDEX CSS */
+*,body {
+
+	padding:0;
+	margin:0;
+
+}
+html,body{
+
+    min-height: 100%;
+    height: 100%;
+
+}
+/*criacao de linhas*/
+.container{
+
+    height: 100%;
+    display: grid;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    background: #C02425;
+    background: -webkit-linear-gradient(to right, #F0CB35, #C02425);
+    background: linear-gradient(to right, #F0CB35, #C02425);
+}
+/*=====================*/
+
+
+/*============================== CABEÇALHO ==============================*/
+
+.cabecalho{
+
+    background: #C02425;
+    background: -webkit-linear-gradient(to right, #f0cb355d, #C02425);
+    background: linear-gradient(to right, #F0CB35, #C02425);
+
+}
+
+/*============================ CORPO ===============================*/
+
+.logo{
+
+    max-height: 300px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.logo>img{
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+
+}
+
+.div_login{
+
+    background-color: rgba(255, 255, 255, 0.596);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid rgb(87, 87, 87);
+    border-bottom: 1px solid rgb(87, 87, 87);
+    border-radius: 15px;
+}
+
+.div_acesse{
+    margin-top: 50px;
+    font-family: Arial, Helvetica;
+    font-size: 25px;
+
+}
+
+.form{
+
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+input{
+
+    border-radius: 5px;
+    padding: 0 5px;
+    height: 30px;
+    margin-top: 10px;
+    width: 275px;
+}
+
+
+.buttons{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 50px;
+    align-items: center;
+
+}
+
+.buttons>button{
+
+    height: 30px;
+    padding: 0 5px;
+    border-radius: 5px;
+
+}
+/*=================================================================*/
+/*============================ RODAPÉ ============================*/
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #C02425;
+    background: -webkit-linear-gradient(to right, #F0CB35, #C02425);
+    background: linear-gradient(to right, #F0CB35, #C02425);
+    text-align: center;
+    font-size: 15px;
+    padding: 12px;
+    color: white;
+    width: auto;
+    height: auto;
+    border-top: px solid rgb(255, 255, 255);
+
+}
