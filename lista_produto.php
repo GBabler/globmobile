@@ -27,15 +27,15 @@ session_destroy();
 			<div align="center">
 				<a href="inserir_produto.php">INSERIR NOVO PRODUTO</a>
 				&nbsp &nbsp
-				<a href="lista_usuario.php">USUÁRIOS</a>
+				<a href="lista_adm.php">USUÁRIOS</a>
 				&nbsp &nbsp
 				<a href="logout.php">LOGOUT</a>
 			</div>
 			<br>
 			<tr">
+				<th>ID</th>
 				<th>NOME</th>
-				<th>MARCA</th>
-				<th>QUANTIDADE</th>
+				<th>Email</th>
 				<th>AÇÃO</th>
 				<th>APAGAR DADOS</th>
 			</tr>
@@ -58,13 +58,13 @@ session_destroy();
 				$inicio = ($pagina * $limite) - $limite;
 
 				//conta o numero de linhas da tabela
-				$qtdRegistros = $pdo->query('select count(id) from produtos')->fetchColumn();
+				$qtdRegistros = $pdo->query('select count(id) from usuarios')->fetchColumn();
 
 				//Determina o total de páginas
 				$total_paginas = Ceil($qtdRegistros / $limite);
 
 				//seleciona os registros do php
-				$sql = "select * from produtos LIMIT $inicio, $limite"; //limite no seleqt mysql
+				$sql = "select * from usuarios LIMIT $inicio, $limite"; //limite no seleqt mysql
 
 				//executa o select
 				$sql = $pdo->query($sql);
@@ -73,15 +73,15 @@ session_destroy();
 
 		foreach	($sql->fetchall() as $user) {
 		echo '<tr>';
+			echo '<td align="center">'.$user['id'].'</td>';
 			echo '<td align="center">'.$user['nome'].'</td>';
-			echo '<td align="center">'.$user['marca'].'</td>';
-			echo '<td align="center">'.$user['quantidade'].'</td>';
+			echo '<td align="center">'.$user['email'].'</td>';
+			
 			echo '<td align="center">
-				<a href="editar_produto.php?id='.$user['id'].' "><font color="blue"> ALTERAR PRODUTO </font> </a><br>
-				<a href="remover_produto.php?id='.$user['id'].' "><font color="blue"> ALTERAR QUANTIDADE </font> </a>
+				<a href="editar_produto.php?id='.$user['id'].' "><font color="black"> Editar Usuario </font> </a><br>
 				</td>';
 			echo '<td align="center">
-			<a href="excluir_produto.php?id='.$user['id'].' "><font color="blue"> APAGAR PRODUTO </font> </a><br>
+			<a href="excluir_produto.php?id='.$user['id'].' "><font color="blue"> Remover Usuario </font> </a><br>
 			</td>';
 
 		echo '</tr>';
@@ -95,12 +95,12 @@ session_destroy();
 <div align="center">
 <?php
 		echo '<div>';
-			echo '<a href="lista_usuario.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
+			echo '<a href="lista_adm.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
 			
 			for ($i=1; $i <= $total_paginas; $i++){ //looping conforme o numero de paginas
-				echo '<a href="lista_usuario.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
+				echo '<a href="lista_adm.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
 				}
-				echo '<a class="page.link" href="lista_usuario.php?pag='.$total_paginas.'">ULTIMA</a>';
+				echo '<a class="page.link" href="lista_adm.php?pag='.$total_paginas.'">ULTIMA</a>';
 				echo '</div>'; //ultima pagina
 				?>
 

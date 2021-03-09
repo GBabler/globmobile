@@ -23,7 +23,7 @@ $senha = md5(addslashes($_POST['senha'])); // variável senha com criptografia M
 $sql = "UPDATE cadastro SET nome = '$nome', email = '$email', senha = '$senha' WHERE id = '$id'";
 
 $sql = $pdo->query($sql); //executa o insert.
-header("Location: lista_usuario.php"); //após a execução do insert, retorna para a página de consulta dos dados.
+header("Location: lista_adm.php"); //após a execução do insert, retorna para a página de consulta dos dados.
 }
 
 //apresenta apenas os dados do ïd que foi selecionado
@@ -35,7 +35,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	// $teste = var_dump($dado); variavel para pegar o valor var_dump
 	// return $dado; retorna o var_dump
 }else{
-	header("Location: lista_usuario.php");
+	header("Location: lista_adm.php");
 }
 ?>
 
@@ -62,7 +62,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<input type="password" name="senha" value="<?php echo $dado['senha']?>"/> </br>
 	<button type="submit">Salvar</button>
 
-	<a href="inserir_usuario.php"><button type="button">Cancelar</button></a>
+	<a href="inserir_adm.php"><button type="button">Cancelar</button></a>
 </form>
 </body>
 

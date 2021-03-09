@@ -74,8 +74,8 @@ session_destroy();
 			echo '<td align="center">'.$user['nome'].'</td>';
 			echo '<td align="center">'.$user['email'].'</td>';
 			echo '<td align="center">
-				<a href="excluir_usuario.php?id='.$user['id'].' "><font color="blue"> APAGAR USUÁRIO </font> </a><br>
-				<a href="editar_usuario.php?id='.$user['id'].' "><font color="blue"> ALTERAR USUÁRIO </font> </a>
+				<a href="excluir_adm.php?id='.$user['id'].' "><font color="blue"> APAGAR USUÁRIO </font> </a><br>
+				<a href="editar_adm.php?id='.$user['id'].' "><font color="blue"> ALTERAR USUÁRIO </font> </a>
 				</td>';
 		echo '</tr>';
 	}
@@ -88,12 +88,12 @@ session_destroy();
 <div align="center">
 <?php
 		echo '<div>';
-			echo '<a href="lista_usuario.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
+			echo '<a href="lista_adm.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
 			
 			for ($i=1; $i <= $total_paginas; $i++){ //looping conforme o numero de paginas
-				echo '<a href="lista_usuario.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
+				echo '<a href="lista_adm.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
 				}
-				echo '<a class="page.link" href="lista_usuario.php?pag='.$total_paginas.'">ULTIMA</a>';
+				echo '<a class="page.link" href="lista_adm.php?pag='.$total_paginas.'">ULTIMA</a>';
 				echo '</div>'; //ultima pagina
 				?>
 

@@ -15,8 +15,8 @@ if(isset($_GET['id']) && empty($_GET['id']) == false) {
 
 	$sql = $pdo->query($sql);
 
-	header("Location: lista_usuario.php");
+	header("Location: lista_adm.php");
 } else {
-	header("Location: lista_usuario.php");
+	header("Location: lista_adm.php");
 }
 ?>

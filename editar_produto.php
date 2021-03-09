@@ -16,14 +16,14 @@ if(isset($_GET['id']) && empty($_GET['id']) == false) {
 if (isset($_POST['nome']) && empty($_POST['nome']) == false) { 
 // pega os valores digitados nos campos do formulario e insere nas variáveis 
 $nome = addslashes($_POST['nome']); //variável nome
-$marca = addslashes($_POST['marca']); // varável email.
-$quantidade = addslashes($_POST['quantidade']); // variável senha com criptografia MD5
+$marca = addslashes($_POST['email']); // variável email.
+
 
 //altera os registros no BD, apenas do id selecionado.
-$sql = "UPDATE produtos SET nome = '$nome', marca = '$marca', quantidade = '$quantidade' WHERE id = '$id'";
+$sql = "UPDATE usuarios SET nome = '$nome', email = '$email' WHERE id = '$id'";
 
 $sql = $pdo->query($sql); //executa o insert.
-header("Location: lista_produtos.php"); //após a execução do insert, retorna para a página de consulta dos dados.
+header("Location: lista_produto.php"); //após a execução do insert, retorna para a página de consulta dos dados.
 }
 
 //apresenta apenas os dados do ïd que foi selecionado
@@ -35,7 +35,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	// $teste = var_dump($dado); variavel para pegar o valor var_dump
 	// return $dado; retorna o var_dump
 }else{
-	header("Location: lista_produtos.php");
+	header("Location: lista_produto.php");
 }
 ?>
 
