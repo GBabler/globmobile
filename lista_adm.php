@@ -23,6 +23,7 @@ session_destroy();
 	<header>
 			<div class="user_info">
 				<?php echo "$_SESSION[nome]"; ?>
+				|
 				<a class="logout" href="logout.php">Logout</a>
 		 	</div>
 	</header>
@@ -78,8 +79,8 @@ session_destroy();
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
 			echo '<td class="letra-tabela">'.$user['email'].'</td>';
 			echo '<td>
-				<a class="adm-cadastrados-header-footer" href="excluir_adm.php?id='.$user['id'].' ">USUÁRIO</a><br>
-				<a class="adm-cadastrados-header-footer" href="editar_adm.php?id='.$user['id'].' ">USUÁRIO</a>
+				<a class="adm-cadastrados-header-footer" href="editar_adm.php?id='.$user['id'].' ">EDITAR</a><br>
+				<a class="adm-cadastrados-header-footer" href="excluir_adm.php?id='.$user['id'].' ">APAGAR</a>
 				</td>';
 		echo '</tr>';
 	}
