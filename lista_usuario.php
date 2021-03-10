@@ -19,13 +19,16 @@ session_destroy();
 	<title>Lista de Usuarios</title>
 	<link rel="stylesheet" type="text/css" href="./css/lista_usuario.css">
 </head>
+<header>
+	<div class="user_info">
+			<?php echo "$_SESSION[nome]"; ?>
+			|
+			<a href="logout.php">Logout</a>
+		 	</div>
+	</header>
 <body>
 	<table align="center">
 		<thead>
-			<div><br>
-			<?php echo "$_SESSION[nome]"; ?>
-			<a href="logout.php">LOGOUT</a>
-		</div><br>
 			<div>
 				<a href="inserir_usuario.php">NOVO USUARIO</a>
 				&nbsp &nbsp
@@ -36,7 +39,7 @@ session_destroy();
 			<tr">
 				<th>ID</th>
 				<th>NOME</th>
-				<th>Email</th>
+				<th>EMAIL</th>
 				<th>AÇÃO</th>
 				<th>APAGAR DADOS</th>
 			</tr>
@@ -73,18 +76,14 @@ session_destroy();
 				/************ FINALIZA O PHP PARA EFETUAR A PAGINAÇÃO ********/ 
 
 		foreach	($sql->fetchall() as $user) {
-		echo '<tr>';
+			echo '<tr>';
 			echo '<td align="center">'.$user['id'].'</td>';
 			echo '<td align="center">'.$user['nome'].'</td>';
 			echo '<td align="center">'.$user['email'].'</td>';
-			
 			echo '<td align="center">
-				<a href="editar_usuario.php?id='.$user['id'].' "><font color="black"> Editar Usuario </font> </a><br>
+				<a href="excluir_usuario.php?id='.$user['id'].' "><font color="black"> APAGAR USUÁRIO </font> </a><br>
+				<a href="editar_usuario.php?id='.$user['id'].' "><font color="black"> ALTERAR USUÁRIO </font> </a>
 				</td>';
-			echo '<td align="center">
-			<a href="excluir_usuario.php?id='.$user['id'].' "><font color="blue"> Remover Usuario </font> </a><br>
-			</td>';
-
 		echo '</tr>';
 	}
 
@@ -96,12 +95,12 @@ session_destroy();
 <div align="center">
 <?php
 		echo '<div>';
-			echo '<a href="lista_adm.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
+			echo '<a href="lista_usuario.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
 			
 			for ($i=1; $i <= $total_paginas; $i++){ //looping conforme o numero de paginas
-				echo '<a href="lista_adm.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
+				echo '<a href="lista_usuario.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
 				}
-				echo '<a class="page.link" href="lista_adm.php?pag='.$total_paginas.'">ULTIMA</a>';
+				echo '<a href="lista_usuario.php?pag='.$total_paginas.'">ULTIMA</a>';
 				echo '</div>'; //ultima pagina
 				?>
 

@@ -11,10 +11,9 @@ session_destroy();
 if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 
 	$nome = addslashes($_POST['nome']);
-	$marca = addslashes($_POST['marca']);
-	$quantidade = addslashes($_POST['quantidade']);
+	$email = addslashes($_POST['email']);
 
-	$sql = "INSERT INTO produtos SET nome = '$nome', marca = '$marca', quantidade = '$quantidade' ";
+	$sql = "INSERT INTO usuarios SET nome = '$nome', email = '$email'";
 
 	$sql = $pdo->query($sql);
 	header ("Location: lista_usuario.php");
@@ -29,27 +28,22 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 	<meta charset="utf-8">
 	<meta name = "viewport" content="widht=device-width, inicial-scale=1.0">
 	<div style="text-align: right;">
-		<span>Bem Vindo <?php echo "$_SESSION[nome]"; ?></span> 
+		<?php echo "$_SESSION[nome]";?> 
 		<!-- mensagem de bem vindo com o nome do usuário -->
-
 	</div>
 </head>
 
-<body bgcolor="#4F4F4F" text="#DCDCDC" align="center";>
+<body>
 	<form method="POST">
-		<label>Nome do Produto: </label><br>
-		<input type="text" name="nome"/> </br><p>
+		<label>Nome do usuario: </label><br>
+		<input type="text" name="nome"/> </br>
 			
-		<label>Marca do Produto: </label><br>
-		<input type="text" name="marca"> </br><p>
+		<label>Email: </label><br>
+		<input type="text" name="email"> </br>
 			
-
-		<label>Quantidade: </label><br>
-		<input type="text" name="quantidade"> </br>
-
 		<br>
-		<button type="submit" align="center">Inserir</button><br><p>
-		<a href="lista_usuario.php"><button type="button" align="center">Tabela de Produtos</button><br><p></a>
+		<button type="submit">Inserir</button>
+		<a href="lista_usuario.php"><button type="button">Voltar</button><br><p></a>
 	</form>
 
 </body>

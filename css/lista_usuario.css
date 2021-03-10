@@ -7,7 +7,7 @@
 /*---------------------CABECALHO------------------------*/
 .user_info{
     text-align: right;
-    
+    color: rgb(0, 0, 0);
 }
 
 /*---------------------CABECALHO------------------------*/
@@ -48,4 +48,11 @@ table tr:nth-child(even){
 table tr:nth-child(even){
 
     background-color: rgba(198, 228, 255, 0.767);
+}
+
+.link-reset{
+    font-size: 50px;
+    color: black;
+    
+
 }

@@ -47,7 +47,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body bgcolor="#4F4F4F" text="#DCDCDC";>
+<body>
 	<form method="POST">
 	<label>Nome: </label>
 	<!-- O valor dentro do input, exibe o nome que está dentro do array -->
@@ -62,7 +62,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<input type="password" name="senha" value="<?php echo $dado['senha']?>"/> </br>
 	<button type="submit">Salvar</button>
 
-	<a href="inserir_adm.php"><button type="button">Cancelar</button></a>
+	<a href="lista_adm.php"><button type="button">Cancelar</button></a>
 </form>
 </body>
 

@@ -18,15 +18,18 @@ session_destroy();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Lista de administradores</title>
 	<link rel="stylesheet" type="text/css" href="./css/lista_adm.css">
+
 </head>
-<body>
-	<table align="center">
-		<thead>
-			<div class="user_info">
+	<header>
+	<div class="user_info">
 			<?php echo "$_SESSION[nome]"; ?>
 			|
 			<a href="logout.php">Logout</a>
 		 	</div>
+	</header>
+<body>
+	<table align="center">
+		<thead>
 			<div class="cab_tabela">
 				<a href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
 				&nbsp &nbsp
@@ -76,8 +79,8 @@ session_destroy();
 			echo '<td align="center">'.$user['nome'].'</td>';
 			echo '<td align="center">'.$user['email'].'</td>';
 			echo '<td align="center">
-				<a href="excluir_adm.php?id='.$user['id'].' "><font color="blue"> APAGAR USUÁRIO </font> </a><br>
-				<a href="editar_adm.php?id='.$user['id'].' "><font color="blue"> ALTERAR USUÁRIO </font> </a>
+				<a href="excluir_adm.php?id='.$user['id'].' "><font color="black"> APAGAR USUÁRIO </font> </a><br>
+				<a href="editar_adm.php?id='.$user['id'].' "><font color="black"> ALTERAR USUÁRIO </font> </a>
 				</td>';
 		echo '</tr>';
 	}

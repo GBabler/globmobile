@@ -18,7 +18,6 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 $nome = addslashes($_POST['nome']); //variável nome
 $email = addslashes($_POST['email']); // variável email.
 
-
 //altera os registros no BD, apenas do id selecionado.
 $sql = "UPDATE usuarios SET nome = '$nome', email = '$email' WHERE id = '$id'";
 
