@@ -49,3 +49,15 @@ table tr:nth-child(even){
 
     background-color: rgba(198, 228, 255, 0.767);
 }
+
+.logout,.adm-cadastrados-header-footer{
+    
+    color: black;
+    color: inherit;
+}
+
+.letra-tabela{
+
+    font-weight: bold;
+
+}

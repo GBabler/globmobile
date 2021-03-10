@@ -21,19 +21,18 @@ session_destroy();
 
 </head>
 	<header>
-	<div class="user_info">
-			<?php echo "$_SESSION[nome]"; ?>
-			|
-			<a href="logout.php">Logout</a>
+			<div class="user_info">
+				<?php echo "$_SESSION[nome]"; ?>
+				<a class="logout" href="logout.php">Logout</a>
 		 	</div>
 	</header>
 <body>
 	<table align="center">
 		<thead>
 			<div class="cab_tabela">
-				<a href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
+				<a class="adm-cadastrados-header-footer" href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
 				&nbsp &nbsp
-				<a href="lista_usuario.php">TABELA DE CADASTRADOS</a>
+				<a class="adm-cadastrados-header-footer" href="lista_usuario.php">TABELA DE CADASTRADOS</a>
 				&nbsp &nbsp
 			</div>
 			<br>
@@ -76,11 +75,11 @@ session_destroy();
 
 		foreach	($sql->fetchall() as $user) {
 		echo '<tr>';
-			echo '<td align="center">'.$user['nome'].'</td>';
-			echo '<td align="center">'.$user['email'].'</td>';
-			echo '<td align="center">
-				<a href="excluir_adm.php?id='.$user['id'].' "><font color="black"> APAGAR USUÁRIO </font> </a><br>
-				<a href="editar_adm.php?id='.$user['id'].' "><font color="black"> ALTERAR USUÁRIO </font> </a>
+			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
+			echo '<td class="letra-tabela">'.$user['email'].'</td>';
+			echo '<td>
+				<a class="adm-cadastrados-header-footer" href="excluir_adm.php?id='.$user['id'].' ">USUÁRIO</a><br>
+				<a class="adm-cadastrados-header-footer" href="editar_adm.php?id='.$user['id'].' ">USUÁRIO</a>
 				</td>';
 		echo '</tr>';
 	}
@@ -93,12 +92,12 @@ session_destroy();
 <div align="center">
 <?php
 		echo '<div>';
-			echo '<a href="lista_adm.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
+			echo '<a class="adm-cadastrados-header-footer" href="lista_adm.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
 			
 			for ($i=1; $i <= $total_paginas; $i++){ //looping conforme o numero de paginas
-				echo '<a href="lista_adm.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
+				echo '<a class="adm-cadastrados-header-footer" href="lista_adm.php?pag='.$i.'">'.$i.'</a>&nbsp &nbsp'; 
 				}
-				echo '<a class="page.link" href="lista_adm.php?pag='.$total_paginas.'">ULTIMA</a>';
+				echo '<a class="adm-cadastrados-header-footer" class="page.link" href="lista_adm.php?pag='.$total_paginas.'">ULTIMA</a>';
 				echo '</div>'; //ultima pagina
 				?>
 

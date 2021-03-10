@@ -50,9 +50,14 @@ table tr:nth-child(even){
     background-color: rgba(198, 228, 255, 0.767);
 }
 
-.link-reset{
-    font-size: 50px;
-    color: black;
+
+.logout,.usu-adm-header-footer{
     
+    color: black;
+    color: inherit;
+}
+.letra-tabela{
+
+    font-weight: bold;
 
 }
