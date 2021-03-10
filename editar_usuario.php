@@ -16,7 +16,7 @@ if(isset($_GET['id']) && empty($_GET['id']) == false) {
 if (isset($_POST['nome']) && empty($_POST['nome']) == false) { 
 // pega os valores digitados nos campos do formulario e insere nas variáveis 
 $nome = addslashes($_POST['nome']); //variável nome
-$marca = addslashes($_POST['email']); // variável email.
+$email = addslashes($_POST['email']); // variável email.
 
 
 //altera os registros no BD, apenas do id selecionado.
@@ -27,7 +27,7 @@ header("Location: lista_usuario.php"); //após a execução do insert, retorna p
 }
 
 //apresenta apenas os dados do ïd que foi selecionado
-$sql = "SELECT * FROM produtos WHERE id = '$id' ";
+$sql = "SELECT * FROM usuarios WHERE id = '$id' ";
 $sql = $pdo->query($sql); // executa o select
 
 if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
@@ -40,7 +40,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
 	<meta charset="utf-8">
@@ -53,13 +53,10 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<!-- O valor dentro do input, exibe o nome que está dentro do array -->
 	<input type="text" name="nome" value="<?php echo $dado['nome']?>"/> </br> 
 
-	<label>Marca: </label>
+	<label>email: </label>
 	<!-- O valor dentro do input, exibe o email que está dentro do array -->
-	<input type="text" name="marca" value="<?php echo $dado['marca']?>"/> </br>
+	<input type="text" name="email" value="<?php echo $dado['email']?>"/> </br>
 
-	<label>Quantidade: </label>
-	<!-- O valor dentro do input, exibe a senha que está dentro do array -->
-	<input type="text" name="quantidade" value="<?php echo $dado['quantidade']?>"/> </br>
 	<button type="submit">Salvar</button>
 
 	<a href="lista_usuario.php"><button type="button">Cancelar</button></a>
