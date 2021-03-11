@@ -35,12 +35,15 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 
 <body>
 	<form method="POST">
+
+		<div>
 		<label>Nome do usuario: </label><br>
 		<input type="text" name="nome"/> </br>
 			
 		<label>Email: </label><br>
 		<input type="text" name="email"> </br>
-			
+		</div>	
+		
 		<br>
 		<button type="submit">Inserir</button>
 		<a href="lista_usuario.php"><button type="button">Voltar</button><br><p></a>
