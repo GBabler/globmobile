@@ -33,24 +33,29 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 	<link rel="stylesheet" type="text/css" href="./css/inserir_adm.css">
 </head>
 <header class="header">
-	<h1>Registo de Administrador</h1>
+	<h1>Registro de Administrador</h1>
 </header>
 <body>
 	<form method="POST">
+	<div class="color-form">
+		<div class="centralizar">
+		<div class="input-label">
 		<label>Nome: </label><br>
-		<input type="text" name="nome"/> </br><p>
-			
+		<input type="text" name="nome"/><br><br>
+
 		<label>Email: </label><br>
-		<input type="email" name="email"> </br><p>
-			
+		<input type="email" name="email"> <br><br>
 
 		<label>Senha: </label><br>
-		<input type="password" name="senha"> </br>
-
-		<div>
-		<button type="submit">Salvar</button>
-		<a href="lista_adm.php"><button type="button">Voltar</button></a>
+		<input type="password" name="senha"><br><br>
 		</div>
+
+		<div class="div-button">
+		<button  class="button" type="submit">Salvar</button>
+		<a href="lista_adm.php"><button  class="button" type="button">Voltar</button></a>
+		</div>
+		</div>
+	</div>
 	</form>
 
 </body>
