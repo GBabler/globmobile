@@ -32,10 +32,10 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 
 	<link rel="stylesheet" type="text/css" href="./css/inserir_adm.css">
 </head>
-<header class="header">
-	<h1>Registro de Administrador</h1>
-</header>
 <body>
+	<header class="header">
+		<h1>Registro de Administrador</h1>
+	</header>
 	<form method="POST">
 	<div class="color-form">
 		<div class="centralizar">

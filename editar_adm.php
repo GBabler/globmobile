@@ -40,30 +40,44 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Editar Administrador</title>
+	<link rel="stylesheet" type="text/css" href="./css/editar_adm.css">
+
 </head>
-
 <body>
-	<form method="POST">
-	<label>Nome: </label>
-	<!-- O valor dentro do input, exibe o nome que está dentro do array -->
-	<input type="text" name="nome" value="<?php echo $dado['nome']?>"/> </br> 
+	<header class="header">
+		<h1>Editar Administrador</h1>
+	</header>
 
-	<label>E-mail: </label>
-	<!-- O valor dentro do input, exibe o email que está dentro do array -->
-	<input type="email" name="email" value="<?php echo $dado['email']?>"/> </br>
+ <div class="color-form">
+	<div class="centralizar">
+		<div class="input-label">
+			<form method="POST">
+				<label>Nome: </label><br>
+				<!-- O valor dentro do input, exibe o nome que está dentro do array -->
+				<input type="text" name="nome" value="<?php echo $dado['nome']?>"/> <br><br><br>
 
-	<label>Senha: </label>
-	<!-- O valor dentro do input, exibe a senha que está dentro do array -->
-	<input type="password" name="senha" value="<?php echo $dado['senha']?>"/> </br>
-	<button type="submit">Salvar</button>
+				<label>E-mail: </label><br>
+				<!-- O valor dentro do input, exibe o email que está dentro do array -->
+				<input type="email" name="email" value="<?php echo $dado['email']?>"/> <br><br><br>
 
-	<a href="lista_adm.php"><button type="button">Cancelar</button></a>
-</form>
+				<label>Senha: </label><br>
+				<!-- O valor dentro do input, exibe a senha que está dentro do array -->
+				<input type="password" name="senha" value="<?php echo $dado['senha']?>"/> <br><br><br>
+				</div>
+
+				<div class="div-button">
+				<button class="button" type="submit">Salvar</button>
+				<a href="lista_adm.php"><button class="button "type="button">Cancelar</button></a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 </body>
-
 </html> 

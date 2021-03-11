@@ -25,6 +25,10 @@ table, th, td{
     color: rgb(0, 0, 0);
     border: 2px solid black ;
     border-collapse: collapse;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 th, td{
