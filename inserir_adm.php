@@ -23,19 +23,19 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-	<meta charset="utf-8">
-	<meta name = "viewport" content="widht=device-width, inicial-scale=1.0">
-	<div style="text-align: right;">
-		<span>Bem Vindo <?php echo "$_SESSION[nome]"; ?></span> 
-		<!-- mensagem de bem vindo com o nome do usuário -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registro de Administrador</title>
 
-	</div>
+	<link rel="stylesheet" type="text/css" href="./css/inserir_adm.css">
 </head>
-
-<body bgcolor="#4F4F4F" text="#DCDCDC" align="center";>
+<header class="header">
+	<h1>Registo de Administrador</h1>
+</header>
+<body>
 	<form method="POST">
 		<label>Nome: </label><br>
 		<input type="text" name="nome"/> </br><p>
@@ -47,9 +47,10 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 		<label>Senha: </label><br>
 		<input type="password" name="senha"> </br>
 
-		<br>
-		<button type="submit" align="center">Salvar</button><br><p>
-		<a href="lista_adm.php"><button type="button" align="center">Voltar</button><br><p></a>
+		<div>
+		<button type="submit">Salvar</button>
+		<a href="lista_adm.php"><button type="button">Voltar</button></a>
+		</div>
 	</form>
 
 </body>
