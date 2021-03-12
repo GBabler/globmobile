@@ -43,10 +43,8 @@ session_destroy();
 				<th>AÇÃO</th>
 			</tr>
 		</thead>
-
 		<tbody>
-
-				<?php
+<?php
 			/************INICIA O PHP PARA INICIAR A PAGINAÇÃO*********/
 			$limite = 10; //determina o numero de registros que serão mostrados por página
 
