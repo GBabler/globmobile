@@ -81,8 +81,10 @@ session_destroy();
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
 			echo '<td class="letra-tabela">'.$user['email'].'</td>';
 			echo '<td>
-				<a class="usu-adm-header-footer" href="excluir_usuario.php?id='.$user['id'].' ">APAGAR</a><br>
 				<a class="usu-adm-header-footer" href="editar_usuario.php?id='.$user['id'].' ">EDITAR</a>
+				</td>';
+			echo '<td>
+				<a class="usu-adm-header-footer" href="excluir_usuario.php?id='.$user['id'].' ">APAGAR</a><br>
 				</td>';
 		echo '</tr>';
 	}
