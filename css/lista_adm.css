@@ -1,7 +1,7 @@
 * {
 
     font-family: Arial, Helvetica, sans-serif;
-
+    margin: 0; padding: 0; box-sizing: border-box;
 }
 
 /*---------------------CABECALHO------------------------*/
@@ -21,10 +21,11 @@ text-align: center;
 
 table, th, td{
     
-   
+    width: 1000px;
     color: rgb(0, 0, 0);
     border: 2px solid black ;
     border-collapse: collapse;
+    
 }
 
 th, td{
@@ -63,12 +64,23 @@ table tr:nth-child(even){
 }
 
 
-.content{display: flex; margin: auto}
 
-@media screen and (max-width: 480px){
+.content{display: flex; margin: auto;}
+.rtable {width: 100%; text-align: center;}
+
+@media screen and (max-width: 100px){
     .content{width: 94%;}
-
-    .rTable thead{display: none;}
-    .rTable tbody{display: flex; flex-direction: column;}
-
+    
+    .rtable thead {display: none;}
+    .rtable tbody td {display: flex; flex-direction: column}
 }
+
+@media only screen and (min-width: 1200px){
+
+    .content{width: 60%;}
+    .rtable th , .rtables td{padding: 7px;}
+    .rtable tbody tr td:nth-child(1){width: 10%;}
+    .rtable tbody tr td:nth-child(2){width: 10%;}
+    .rtable tbody tr td:nth-child(3){width: 10%;}
+}
+

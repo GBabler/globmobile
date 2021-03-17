@@ -11,7 +11,7 @@ session_destroy();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,15 +28,16 @@ session_destroy();
 		 	</div>
 	</header>
 <body>
-	<div class="content">
-	<table align="center" class="rTable">
-		<thead>
+
 			<div class="cab_tabela">
 				<a class="adm-cadastrados-header-footer" href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
 				&nbsp &nbsp
 				<a class="adm-cadastrados-header-footer" href="lista_usuario.php">TABELA DE CADASTRADOS</a>
 				&nbsp &nbsp
 			</div>
+	<div class="content">
+	<table align="center" class="rtable">
+		<thead>
 			<br>
 			<tr" class="texto_link">
 				<th>NOME</th>
