@@ -28,7 +28,8 @@ session_destroy();
 		 	</div>
 	</header>
 <body>
-	<table align="center">
+	<div class="content">
+	<table align="center" class="rTable">
 		<thead>
 			<div class="cab_tabela">
 				<a class="adm-cadastrados-header-footer" href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
@@ -87,6 +88,7 @@ session_destroy();
 
 	</tbody>
 </table>
+	</div>
 <br>
 <div align="center">
 <?php
