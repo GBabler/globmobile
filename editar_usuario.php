@@ -39,27 +39,38 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Editar Usuario</title>
+	<link rel="stylesheet" type="text/css" href="./css/editar_usuario.css">
 </head>
+<body>
+	<header  class="header">
+		<h1>Editar Usuario</h1>
+	</header>
+	<div class="color-form">
+		<div class="centralizar">
+			<div class="input-label">
+			<form method="POST">
+				<div>
+				<label>Nome: </label><br>
+				<input type="text" name="nome" value="<?php echo $dado['nome']?>"/></br></br>
 
-<body bgcolor="#4F4F4F" text="#DCDCDC";>
-	<form method="POST">
-	<label>Nome: </label>
-	<!-- O valor dentro do input, exibe o nome que está dentro do array -->
-	<input type="text" name="nome" value="<?php echo $dado['nome']?>"/> </br> 
+				<label>email: </label><br>
+				<input type="text" name="email" value="<?php echo $dado['email']?>"/></br></br>
+				</div>
 
-	<label>email: </label>
-	<!-- O valor dentro do input, exibe o email que está dentro do array -->
-	<input type="text" name="email" value="<?php echo $dado['email']?>"/> </br>
-
-	<button type="submit">Salvar</button>
-
-	<a href="lista_usuario.php"><button type="button">Cancelar</button></a>
-</form>
+				<div>
+				<button type="submit">Salvar</button>
+				<a href="lista_usuario.php"><button type="button">Cancelar</button></a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 </body>
 
 </html> 
