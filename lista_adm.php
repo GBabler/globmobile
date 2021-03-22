@@ -77,8 +77,8 @@ session_destroy();
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
 			echo '<td class="letra-tabela">'.$user['email'].'</td>';
 			echo '<td>
-				<a class="adm-cadastrados-header-footer" href="editar_adm.php?id='.$user['id'].' ">EDITAR</a><br>
-				<a class="adm-cadastrados-header-footer" href="excluir_adm.php?id='.$user['id'].' ">APAGAR</a>
+				<a href="editar_adm.php?id='.$user['id'].' "><img src="img\lapis.png" alt="editar"></a>
+				<a href="excluir_adm.php?id='.$user['id'].' "><img src="img\lixeira.png" alt="excluir"></a>
 				</td>';
 		echo '</tr>';
 	}
