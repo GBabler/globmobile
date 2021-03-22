@@ -7,7 +7,9 @@
 /*---------------------CABECALHO------------------------*/
 .user_info{
     text-align: right;
-    
+    margin-top: 2%;
+    margin-right: 4%;
+    margin-bottom: 5%;
 }
 
 /*---------------------CABECALHO------------------------*/
@@ -64,7 +66,7 @@ table tr:nth-child(even){
 
 
 
-.content{display: flex; margin: auto;}
+.content{display: flex; margin: auto; margin-top: 3%;}
 .rtable {width: 100%; text-align: center;}
 .rtable th , .rtables td{padding: 7px;}
 @media screen and (max-width: 1100px){
@@ -94,6 +96,12 @@ table tr:nth-child(even){
 
     border: 1px;
     border-right: blue;
+}
+
+.cab_tela{
+
+    margin-bottom: 5%;
+
 }
 
 
