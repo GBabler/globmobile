@@ -59,13 +59,13 @@ session_destroy();
 				$inicio = ($pagina * $limite) - $limite;
 
 				//conta o numero de linhas da tabela
-				$qtdRegistros = $pdo->query('select count(id) from cadastro')->fetchColumn();
+				$qtdRegistros = $pdo->query('select count(id) from administrador')->fetchColumn();
 
 				//Determina o total de páginas
 				$total_paginas = Ceil($qtdRegistros / $limite);
 
 				//seleciona os registros do php
-				$sql = "select * from cadastro LIMIT $inicio, $limite"; //limite no seleqt mysql
+				$sql = "select * from administrador LIMIT $inicio, $limite"; //limite no seleqt mysql
 
 				//executa o select
 				$sql = $pdo->query($sql);

@@ -14,7 +14,7 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 	$email = addslashes($_POST['email']);
 	$senha = md5(addslashes($_POST['senha']));
 
-	$sql = "INSERT INTO cadastro SET NOME = '$nome', email = '$email', senha = '$senha' ";
+	$sql = "INSERT INTO administrador SET NOME = '$nome', email = '$email', senha = '$senha' ";
 
 	$sql = $pdo->query($sql);
 	header ("Location: lista_adm.php");

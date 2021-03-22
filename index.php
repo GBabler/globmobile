@@ -11,7 +11,7 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
 		$senha = md5((addslashes($_POST['senha']))); //pega a senha digitada 
 
 		//verifica se o e-mail e a senha constam no banco de dados.
-		$sql = $pdo->query("SELECT * FROM cadastro WHERE email = '$email' and senha = '$senha'");
+		$sql = $pdo->query("SELECT * FROM administrador WHERE email = '$email' and senha = '$senha'");
 		if ($sql->rowCount() > 0){ 
 		
 		$dado = $sql->fetch(); //cria um array com os valores do usuário
