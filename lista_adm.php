@@ -48,7 +48,7 @@ session_destroy();
 		<tbody>
 <?php
 			/************INICIA O PHP PARA INICIAR A PAGINAÇÃO*********/
-			$limite = 7; //determina o numero de registros que serão mostrados por página
+			$limite = 10; //determina o numero de registros que serão mostrados por página
 
 			@$pagina = $_GET['pag'];
 				if(isset($pagina)){

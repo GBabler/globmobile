@@ -42,7 +42,7 @@ session_destroy();
 			<tr">
 				<th>ID</th>
 				<th>NOME</th>
-				<th>EMAIL</th>
+				<th>N° Cel</th>
 				<th>AÇÃO</th>
 				
 			</tr>
@@ -52,7 +52,7 @@ session_destroy();
 
 				<?php
 			/************INICIA O PHP PARA INICIAR A PAGINAÇÃO*********/
-			$limite = 7; //determina o numero de registros que serão mostrados por página
+			$limite = 10; //determina o numero de registros que serão mostrados por página
 
 			@$pagina = $_GET['pag'];
 				if(isset($pagina)){
@@ -82,7 +82,7 @@ session_destroy();
 			echo '<tr>';
 			echo '<td class="letra-tabela">'.$user['id'].'</td>';
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
-			echo '<td class="letra-tabela">'.$user['email'].'</td>';
+			echo '<td class="letra-tabela">'.$user['celular'].'</td>';
 			echo '<td>
 				<a class="img" href="editar_usuario.php?id='.$user['id'].' "><img src="img\lapis.png" alt="editar"></a>
 				

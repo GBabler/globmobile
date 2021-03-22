@@ -11,9 +11,9 @@ session_destroy();
 if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 
 	$nome = addslashes($_POST['nome']);
-	$email = addslashes($_POST['email']);
+	$celular = addslashes($_POST['celular']);
 
-	$sql = "INSERT INTO usuarios SET nome = '$nome', email = '$email'";
+	$sql = "INSERT INTO usuarios SET nome = '$nome', celular = '$celular'";
 
 	$sql = $pdo->query($sql);
 	header ("Location: lista_usuario.php");
@@ -39,17 +39,13 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 	<form method="POST">
 		<div class="color-form">
 			<div class="centralizar">
-
+				
 				<div class="input-label">
 				<label>Nome: </label><br>
 				<input type="text" name="nome"/><br><br>
 							
-				<label>Email: </label><br>
-				<input type="text" name="email"> <br><br>
-
-				<label>N° Celular</label>
-				<input type="text" name="celular">
-				</div>
+				<label>N° Celular : </label><br>
+				<input type="tel" name="celular"> <br><br>
 			
 			<div class="div-button">
 			<button type="submit" class="button">Inserir</button>
