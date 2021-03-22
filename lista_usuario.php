@@ -25,17 +25,18 @@ session_destroy();
 			|
 			<a class ="logout" href="logout.php">Logout</a>
 		 	</div>
-	</header>
-<body>
-
-	<table align="center">
-		<thead>
-			<div class="fonte-top">
+			 <div class="fonte-top">
 				<a class="usu-adm-header-footer" href="inserir_usuario.php">NOVO USUARIO</a>
 				&nbsp &nbsp
 				<a class="usu-adm-header-footer" href="lista_adm.php">ADMINISTRADORES</a>
 				&nbsp &nbsp
 			</div>
+	</header>
+<body>
+	<div class="content">
+	<table align="center" class="rtable">
+		<thead>
+			
 			<br>
 			<tr">
 				<th>ID</th>
@@ -95,6 +96,7 @@ session_destroy();
 
 </tbody>
 </table>
+</div>
 <br>
 <div align="center">
 <?php

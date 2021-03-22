@@ -18,7 +18,7 @@ session_destroy();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Lista de administradores</title>
 	<link rel="stylesheet" type="text/css" href="./css/lista_adm.css">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
 	<header>
 			<div class="user_info">
@@ -26,16 +26,18 @@ session_destroy();
 				|
 				<a class="logout" href="logout.php">Logout</a>
 		 	</div>
-	</header>
-<body>
-	<table align="center">
-		<thead>
-			<div class="cab_tabela">
-				<a class="adm-cadastrados-header-footer" href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
+			 <div class="cab_tabela">
+				<a class="adm-cadastrados-header-footer" href="inserir_adm.php">INSERIR ADM</a>
 				&nbsp &nbsp
-				<a class="adm-cadastrados-header-footer" href="lista_usuario.php">TABELA DE CADASTRADOS</a>
+				<a class="adm-cadastrados-header-footer" href="lista_usuario.php">CADASTRADOS</a>
 				&nbsp &nbsp
 			</div>
+	</header>
+<body>
+	<div class="content">
+	<table align="center" class="rtable">
+		<thead>
+			
 			<br>
 			<tr" class="texto_link">
 				<th>NOME</th>
@@ -77,8 +79,8 @@ session_destroy();
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
 			echo '<td class="letra-tabela">'.$user['email'].'</td>';
 			echo '<td>
-				<a href="editar_adm.php?id='.$user['id'].' "><img src="img\lapis.png" alt="editar"></a>
-				<a href="excluir_adm.php?id='.$user['id'].' "><img src="img\lixeira.png" alt="excluir"></a>
+				<a href="editar_adm.php?id='.$user['id'].' "><img class="lapis" src="img\lapis.png" alt="editar"></a>&nbsp
+				<a href="excluir_adm.php?id='.$user['id'].' "><img class="liexeira" src="img\lixeira.png" alt="excluir"></a>
 				</td>';
 		echo '</tr>';
 	}
@@ -87,6 +89,7 @@ session_destroy();
 
 	</tbody>
 </table>
+</div>
 <br>
 <div align="center">
 <?php
