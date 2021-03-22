@@ -27,6 +27,7 @@ session_destroy();
 		 	</div>
 	</header>
 <body>
+
 	<table align="center">
 		<thead>
 			<div class="fonte-top">
@@ -41,7 +42,7 @@ session_destroy();
 				<th>NOME</th>
 				<th>EMAIL</th>
 				<th>AÇÃO</th>
-				<th>APAGAR DADOS</th>
+				
 			</tr>
 		</thead>
 
@@ -81,11 +82,12 @@ session_destroy();
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
 			echo '<td class="letra-tabela">'.$user['email'].'</td>';
 			echo '<td>
-				<a class="usu-adm-header-footer" href="editar_usuario.php?id='.$user['id'].' ">EDITAR</a>
+				<a class="img" href="editar_usuario.php?id='.$user['id'].' "><img src="img\lapis.png" alt="editar"></a>
+				
+				<a class="img" href="excluir_usuario.php?id='.$user['id'].' "><img src="img\lixeira.png" alt="excluir"></a><br>
 				</td>';
-			echo '<td>
-				<a class="usu-adm-header-footer" href="excluir_usuario.php?id='.$user['id'].' ">APAGAR</a><br>
-				</td>';
+				
+			
 		echo '</tr>';
 	}
 

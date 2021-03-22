@@ -11,14 +11,14 @@ session_destroy();
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Lista de administradores</title>
 	<link rel="stylesheet" type="text/css" href="./css/lista_adm.css">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
 	<header>
 			<div class="user_info">
@@ -26,18 +26,18 @@ session_destroy();
 				|
 				<a class="logout" href="logout.php">Logout</a>
 		 	</div>
-	</header>
-<body>
-
-			<div class="cab_tabela">
-				<a class="adm-cadastrados-header-footer" href="inserir_adm.php">INSERIR ADMINISTRADOR</a>
+			 <div class="cab_tabela">
+				<a class="adm-cadastrados-header-footer" href="inserir_adm.php">INSERIR ADM</a>
 				&nbsp &nbsp
-				<a class="adm-cadastrados-header-footer" href="lista_usuario.php">TABELA DE CADASTRADOS</a>
+				<a class="adm-cadastrados-header-footer" href="lista_usuario.php">CADASTRADOS</a>
 				&nbsp &nbsp
 			</div>
+	</header>
+<body>
 	<div class="content">
 	<table align="center" class="rtable">
 		<thead>
+			
 			<br>
 			<tr" class="texto_link">
 				<th>NOME</th>
@@ -61,13 +61,13 @@ session_destroy();
 				$inicio = ($pagina * $limite) - $limite;
 
 				//conta o numero de linhas da tabela
-				$qtdRegistros = $pdo->query('select count(id) from cadastro')->fetchColumn();
+				$qtdRegistros = $pdo->query('select count(id) from administrador')->fetchColumn();
 
 				//Determina o total de páginas
 				$total_paginas = Ceil($qtdRegistros / $limite);
 
 				//seleciona os registros do php
-				$sql = "select * from cadastro LIMIT $inicio, $limite"; //limite no seleqt mysql
+				$sql = "select * from administrador LIMIT $inicio, $limite"; //limite no seleqt mysql
 
 				//executa o select
 				$sql = $pdo->query($sql);
@@ -79,8 +79,8 @@ session_destroy();
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
 			echo '<td class="letra-tabela">'.$user['email'].'</td>';
 			echo '<td>
-				<a class="adm-cadastrados-header-footer" href="editar_adm.php?id='.$user['id'].' ">EDITAR</a><br>
-				<a class="adm-cadastrados-header-footer" href="excluir_adm.php?id='.$user['id'].' ">APAGAR</a>
+				<a href="editar_adm.php?id='.$user['id'].' "><img class="lapis" src="img\lapis.png" alt="editar"></a>&nbsp
+				<a href="excluir_adm.php?id='.$user['id'].' "><img class="liexeira" src="img\lixeira.png" alt="excluir"></a>
 				</td>';
 		echo '</tr>';
 	}
@@ -89,7 +89,7 @@ session_destroy();
 
 	</tbody>
 </table>
-	</div>
+</div>
 <br>
 <div align="center">
 <?php

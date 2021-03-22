@@ -20,14 +20,14 @@ $email = addslashes($_POST['email']); // varável email.
 $senha = md5(addslashes($_POST['senha'])); // variável senha com criptografia MD5
 
 //altera os registros no BD, apenas do id selecionado.
-$sql = "UPDATE cadastro SET nome = '$nome', email = '$email', senha = '$senha' WHERE id = '$id'";
+$sql = "UPDATE administrador SET nome = '$nome', email = '$email', senha = '$senha' WHERE id = '$id'";
 
 $sql = $pdo->query($sql); //executa o insert.
 header("Location: lista_adm.php"); //após a execução do insert, retorna para a página de consulta dos dados.
 }
 
 //apresenta apenas os dados do ïd que foi selecionado
-$sql = "SELECT * FROM cadastro WHERE id = '$id' ";
+$sql = "SELECT * FROM administrador WHERE id = '$id' ";
 $sql = $pdo->query($sql); // executa o select
 
 if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
