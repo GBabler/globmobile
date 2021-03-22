@@ -47,7 +47,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Editar Administrador</title>
 	<link rel="stylesheet" type="text/css" href="./css/editar_adm.css">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
 <body>
 	<header class="header">

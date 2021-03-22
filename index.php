@@ -46,6 +46,7 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>GlobMobile</title>
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
 <body>
 

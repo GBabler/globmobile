@@ -70,7 +70,7 @@ table tr:nth-child(even){
 .rtable {width: 100%; text-align: center;}
 .rtable th , .rtables td{padding: 7px;}
 @media screen and (max-width: 1100px){
-    .content{width: 90%;}
+    .content{width: 98%;}
     
 
     img{
@@ -80,7 +80,7 @@ table tr:nth-child(even){
 
 @media only screen and (min-width: 1100px){
 
-    .content{width: 70%;}
+    .content{width: 60%;}
     
     .rtable tbody tr td:nth-child(1){width: 3%;}
     .rtable tbody tr td:nth-child(2){width: 10%;}
