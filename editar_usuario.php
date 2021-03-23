@@ -16,10 +16,10 @@ if(isset($_GET['id']) && empty($_GET['id']) == false) {
 if (isset($_POST['nome']) && empty($_POST['nome']) == false) { 
 // pega os valores digitados nos campos do formulario e insere nas variáveis 
 $nome = addslashes($_POST['nome']); //variável nome
-$celular = addslashes($_POST['email']); // variável email.
+$celular = addslashes($_POST['celular']); // variável email.
 
 //altera os registros no BD, apenas do id selecionado.
-$sql = "UPDATE usuarios SET nome = '$nome', email = '$celular' WHERE id = '$id'";
+$sql = "UPDATE usuarios SET nome = '$nome', celular = '$celular' WHERE id = '$id'";
 
 $sql = $pdo->query($sql); //executa o insert.
 header("Location: lista_usuario.php"); //após a execução do insert, retorna para a página de consulta dos dados.
@@ -39,7 +39,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,13 +60,13 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 				<label>Nome: </label><br>
 				<input type="text" name="nome" value="<?php echo $dado['nome']?>"/></br></br>
 
-				<label>email: </label><br>
-				<input type="text" name="email" value="<?php echo $dado['email']?>"/></br></br>
+				<label>N° Celular: </label><br>
+				<input type="text" name="celular" value="<?php echo $dado['celular']?>"/></br></br>
 				</div>
 
-				<div>
-				<button type="submit">Salvar</button>
-				<a href="lista_usuario.php"><button type="button">Cancelar</button></a>
+				<div class="div-button">
+				<button type="submit" class="button">Salvar</button>
+				<a href="lista_usuario.php"><button type="button class" class="button">Cancelar</button></a>
 				</div>
 			</form>
 		</div>
