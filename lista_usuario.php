@@ -19,6 +19,7 @@ session_destroy();
 	<title>Lista de Usuarios</title>
 	<link rel="stylesheet" type="text/css" href="./css/lista_usuario.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
 </head>
 <header>
 	<div class="user_info">
