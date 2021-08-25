@@ -27,7 +27,7 @@ session_destroy();
 			|
 			<a class ="logout" href="logout.php">Logout</a>
 		 	</div>
-			 <div class="fonte-top">
+			 <div class="fonte-top">teste
 				<a class="usu-adm-header-footer" href="inserir_usuario.php">NOVO USUARIO</a>
 				&nbsp &nbsp
 				<a class="usu-adm-header-footer" href="lista_adm.php">ADMINISTRADORES</a>
