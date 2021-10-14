@@ -17,7 +17,7 @@ session_destroy();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Lista de Usuarios</title>
-	<link rel="stylesheet" type="text/css" href="./css/lista_usuario.css">
+	<link rel="stylesheet" type="text/css" href=".\css\lista_ida.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
 </head>
@@ -32,25 +32,10 @@ session_destroy();
 
 
 					<div>
-						<p>
-							<input type="button" value="NOVO USUARIO" id = "btnUsuario">
-
-							<input type="button" value="MENU" id = "btnVoltar" onclick="voltarMenu()">
+							<input type="button" value="VOLTAR PARA MENU" id = "iptbtn" onclick="voltarMenu()">
 						</p>
 					</div>
 					
-
-
-
-
-
-
-			 <div class="fonte-top">
-				<a class="usu-adm-header-footer" href="inserir_usuario.php">NOVO USUARIO</a>
-				&nbsp &nbsp
-				<a class="usu-adm-header-footer" href="lista_adm.php">ADMINISTRADORES</a>
-				&nbsp &nbsp
-			</div>
 	</header>
 	<div class="content">
 	<table align="center" class="rtable">
@@ -58,10 +43,8 @@ session_destroy();
 			
 			<br>
 			<tr">
-				<th>ID</th>
+
 				<th>NOME</th>
-				<th>N° Cel</th>
-				<th>AÇÃO</th>
 				
 			</tr>
 		</thead>
@@ -83,14 +66,15 @@ session_destroy();
 				$inicio = ($pagina * $limite) - $limite;
 
 				//conta o numero de linhas da tabela
-				$qtdRegistros = $pdo->query('select count(id) from usuarios')->fetchColumn();
+				$qtdRegistros = $pdo->query('SELECT count(posicao) FROM usuarios')->fetchColumn();
 
 				//Determina o total de páginas
 				$total_paginas = Ceil($qtdRegistros / $limite);
 
 				//seleciona os registros do php
-				$sql = "select * from usuarios LIMIT $inicio, $limite"; //limite no seleqt mysql
-
+				$sql = "SELECT * FROM usuarios 
+				WHERE val_ida = '1'
+				order by posicao asc  LIMIT $inicio, $limite"; //limite no seleqt mysql
 				//executa o select
 				$sql = $pdo->query($sql);
 
@@ -98,15 +82,8 @@ session_destroy();
 
 		foreach	($sql->fetchall() as $user) {
 			echo '<tr>';
-			echo '<td class="letra-tabela">'.$user['id'].'</td>';
+
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
-			echo '<td class="letra-tabela">'.$user['celular'].'</td>';
-			echo '<td>
-				<a class="img" href="editar_usuario.php?id='.$user['id'].' "><img src="img\lapis.png" alt="editar"></a>
-				
-				<a class="img" href="excluir_usuario.php?id='.$user['id'].' "><img src="img\lixeira.png" alt="excluir"></a><br>
-				</td>';
-				
 			
 		echo '</tr>';
 	}
@@ -137,7 +114,7 @@ session_destroy();
 				</p>
 		</footer>
 
-		<script src="js\lista_usuario.js">
+		<script src="js\lista_ida.js">
 				
 		</script>
 

@@ -31,7 +31,7 @@ table, th, td{
 
 th, td{
 
-   padding: 5px 10px;
+   padding: 10px 10px;
    
 }
 
@@ -124,4 +124,17 @@ input#btnGerar{
     width: 150px;
     font-size: 20px;
 
+}
+
+#iptbtn
+{
+width: 200px;
+height: 75px;
+border-radius: 5px;
+border: none;
+background-color: rgba(99, 96, 96, 0.589);
+text-align: center;
+font-size: 25px;
+white-space: normal;
+font-weight:bold;
 }
