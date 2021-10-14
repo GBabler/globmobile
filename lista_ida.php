@@ -85,7 +85,7 @@ session_destroy();
 
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
 			
-		echo '</tr>';
+		echo '</div>';
 	}
 
 ?>

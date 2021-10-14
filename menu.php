@@ -39,7 +39,8 @@ if(isset($_GET['id']) && empty($_GET['id']) == false) {
                     <input type="button" value="Perfil" id ="iptbtn" onclick="perfilMotorista()">
                 </div>
                 <div id="divbt2">
-                    <input type="button" value="" id ="iptbtn">
+                    <input type="button" value="Conf Aluno" id ="iptbtn" onclick="confirmacaoAluno()">
+
                 </div>
                 <div id="divbt3">
                     <input type="button" value="Iniciar Trajeto" id ="iptbtn" onclick="iniciarTrajeto()">

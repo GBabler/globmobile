@@ -12,3 +12,8 @@ function perfilMotorista()
 {
     window.location.href = "lista_adm.php"
 }
+
+function confirmacaoAluno()
+{
+    window.location.href = "confirmacaoAluno.php"
+}
