@@ -17,7 +17,7 @@ session_destroy();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Lista de Usuarios</title>
-	<link rel="stylesheet" type="text/css" href=".\css\lista_ida.css">
+	<link rel="stylesheet" type="text/css" href="css\lista_ida.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
 </head>
@@ -32,7 +32,7 @@ session_destroy();
 
 
 					<div>
-							<input type="button" value="VOLTAR PARA MENU" id = "iptbtn" onclick="voltarMenu()">
+							<input type="button" value="VOLTAR PARA MENU" id = "btnVoltar" onclick="voltarMenu()">
 						</p>
 					</div>
 					
@@ -43,9 +43,8 @@ session_destroy();
 			
 			<br>
 			<tr">
-
 				<th>NOME</th>
-				
+
 			</tr>
 		</thead>
 
@@ -53,7 +52,7 @@ session_destroy();
 
 				<?php
 			/************INICIA O PHP PARA INICIAR A PAGINAÇÃO*********/
-			$limite = 7; //determina o numero de registros que serão mostrados por página
+			$limite = 1; //determina o numero de registros que serão mostrados por página
 
 			@$pagina = $_GET['pag'];
 				if(isset($pagina)){
@@ -66,7 +65,8 @@ session_destroy();
 				$inicio = ($pagina * $limite) - $limite;
 
 				//conta o numero de linhas da tabela
-				$qtdRegistros = $pdo->query('SELECT count(posicao) FROM usuarios')->fetchColumn();
+				$qtdRegistros = $pdo->query('SELECT count(posicao) FROM usuarios 
+				WHERE val_ida = "1" ')->fetchColumn();
 
 				//Determina o total de páginas
 				$total_paginas = Ceil($qtdRegistros / $limite);
@@ -97,12 +97,12 @@ session_destroy();
 <div align="center">
 <?php
 		echo '<div>';
-			echo '<a class="usu-adm-header-footer" href="lista_usuario.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
+			echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
 			
 			for ($i=1; $i <= $total_paginas; $i++){ //looping conforme o numero de paginas
-				echo '<a class="usu-adm-header-footer" href="lista_usuario.php?pag='.$i.'"> '.$i.' </a>&nbsp &nbsp'; 
+				echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag='.$i.'"> '.$i.' </a>&nbsp &nbsp'; 
 				}
-				echo '<a class="usu-adm-header-footer" href="lista_usuario.php?pag='.$total_paginas.'">ULTIMA</a>';
+				echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag='.$total_paginas.'">ULTIMA</a>';
 				echo '</div>'; //ultima pagina
 				?>
 
@@ -114,9 +114,7 @@ session_destroy();
 				</p>
 		</footer>
 
-		<script src="js\lista_ida.js">
-				
-		</script>
+		<script src="js\lista_ida.js"></script>
 
 </body>
 

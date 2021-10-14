@@ -52,7 +52,7 @@ table tr:nth-child(even){
     background-color: rgba(198, 228, 255, 0.767);
 }
 
-.logout,.adm-cadastrados-header-footer{
+.logout{
     
     color: rgb(2, 2, 2);
     color: inherit;
@@ -98,10 +98,17 @@ table tr:nth-child(even){
     border-right: blue;
 }
 
-.cab_tela{
-
-    margin-bottom: 5%;
-
+#btnMenu
+{
+    width: 125px;
+    height: 65px;
+    border-radius: 5%;
+    border: none;
+    background-color: rgba(99, 96, 96, 0.589);
+    text-align: center;
+    font-size: 25px;
+    white-space: normal;
+    font-weight:bold;
 }
 
 

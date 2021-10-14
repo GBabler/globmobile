@@ -27,6 +27,7 @@ table, th, td{
     color: rgb(0, 0, 0);
     border: 2px solid black ;
     border-collapse: collapse;
+    border: none;
 }
 
 th, td{
@@ -39,7 +40,7 @@ th{
 
     background-color: blue;
     color: white;
-
+    border: none;
 }
 /*even aplica em todos os elementos pares*/
 table tr:nth-child(even){
@@ -62,6 +63,8 @@ table tr:nth-child(even){
 .letra-tabela{
 
     font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 500px;
 
 }
 
@@ -126,7 +129,7 @@ input#btnGerar{
 
 }
 
-#iptbtn
+#btnVoltar
 {
 width: 200px;
 height: 75px;
@@ -134,7 +137,7 @@ border-radius: 5px;
 border: none;
 background-color: rgba(99, 96, 96, 0.589);
 text-align: center;
-font-size: 25px;
+font-size: 20px;
 white-space: normal;
 font-weight:bold;
 }

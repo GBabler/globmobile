@@ -29,36 +29,20 @@ session_destroy();
 			|
 			<a class ="logout" href="logout.php">Logout</a>
 			</div>
-
-
-					<div>
-						<p>
-							<input type="button" value="NOVO USUARIO" id = "btnUsuario">
-
-							<input type="button" value="MENU" id = "btnVoltar" onclick="voltarMenu()">
-						</p>
+					<div id = "iptbtncenter">
+						
+							<input type="button" value="NOVO USUARIO" id = "iptbtn" onclick="novoUsuario()">
+							<input type="button" value="VOLTAR AO MENU" id = "iptbtn" onclick="voltarMenu()">
+						
 					</div>
-					
-
-
-
-
-
-
-			 <div class="fonte-top">
-				<a class="usu-adm-header-footer" href="inserir_usuario.php">NOVO USUARIO</a>
-				&nbsp &nbsp
-				<a class="usu-adm-header-footer" href="lista_adm.php">ADMINISTRADORES</a>
-				&nbsp &nbsp
-			</div>
 	</header>
 	<div class="content">
-	<table align="center" class="rtable">
+	<table align ="center" class="rtable">
 		<thead>
 			
 			<br>
 			<tr">
-				<th>ID</th>
+				<th>POS</th>
 				<th>NOME</th>
 				<th>N° Cel</th>
 				<th>AÇÃO</th>
@@ -89,7 +73,9 @@ session_destroy();
 				$total_paginas = Ceil($qtdRegistros / $limite);
 
 				//seleciona os registros do php
-				$sql = "select * from usuarios LIMIT $inicio, $limite"; //limite no seleqt mysql
+				$sql = "select * from usuarios 
+				order by posicao asc
+				LIMIT $inicio, $limite"; //limite no seleqt mysql
 
 				//executa o select
 				$sql = $pdo->query($sql);
@@ -98,7 +84,7 @@ session_destroy();
 
 		foreach	($sql->fetchall() as $user) {
 			echo '<tr>';
-			echo '<td class="letra-tabela">'.$user['id'].'</td>';
+			echo '<td class="letra-tabela">'.$user['posicao'].'</td>';
 			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
 			echo '<td class="letra-tabela">'.$user['celular'].'</td>';
 			echo '<td>

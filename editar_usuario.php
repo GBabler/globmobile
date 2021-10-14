@@ -17,9 +17,9 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 // pega os valores digitados nos campos do formulario e insere nas variáveis 
 $nome = addslashes($_POST['nome']); //variável nome
 $celular = addslashes($_POST['celular']); // variável email.
-
+$posicao = addslashes($_POST['posicao']); //variável nome
 //altera os registros no BD, apenas do id selecionado.
-$sql = "UPDATE usuarios SET nome = '$nome', celular = '$celular' WHERE id = '$id'";
+$sql = "UPDATE usuarios SET posicao = '$posicao', nome = '$nome', celular = '$celular' WHERE id = '$id'";
 
 $sql = $pdo->query($sql); //executa o insert.
 header("Location: lista_usuario.php"); //após a execução do insert, retorna para a página de consulta dos dados.
@@ -57,6 +57,9 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 			<div class="input-label">
 			<form method="POST">
 				<div>
+				<label>Posição na fila: </label><br>
+				<input type="text" name="posicao" value="<?php echo $dado['posicao']?>"/></br></br>
+
 				<label>Nome: </label><br>
 				<input type="text" name="nome" value="<?php echo $dado['nome']?>"/></br></br>
 

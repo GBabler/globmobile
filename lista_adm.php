@@ -17,7 +17,7 @@ session_destroy();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Lista de administradores</title>
-	<link rel="stylesheet" type="text/css" href="./css/lista_adm.css">
+	<link rel="stylesheet" type="text/css" href="css\lista_adm.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
 	<header>
@@ -26,12 +26,14 @@ session_destroy();
 				|
 				<a class="logout" href="logout.php">Logout</a>
 		 	</div>
-			 <div class="cab_tabela">
-				<a class="adm-cadastrados-header-footer" href="inserir_adm.php">INSERIR ADM</a>
-				&nbsp &nbsp
-				<a class="adm-cadastrados-header-footer" href="lista_usuario.php">CADASTRADOS</a>
-				&nbsp &nbsp
-			</div>
+
+
+					<div>
+						<p>
+							<input type="button" value="Voltar" id = "btnMenu" onclick="voltarMenu()">
+						</p>
+					</div>
+
 	</header>
 <body>
 	<div class="content">
@@ -106,4 +108,5 @@ session_destroy();
 				<!-- Final do menu de paginação -->
 				</div>
 </body>
+<script src="js\lista_adm.js"></script>
 </html>
