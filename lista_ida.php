@@ -29,11 +29,8 @@ session_destroy();
 			|
 			<a class ="logout" href="logout.php">Logout</a>
 			</div>
-
-
 					<div>
 							<input type="button" value="VOLTAR PARA MENU" id = "btnVoltar" onclick="voltarMenu()">
-						</p>
 					</div>
 					
 	</header>
@@ -96,13 +93,18 @@ session_destroy();
 <br>
 <div align="center">
 <?php
-		echo '<div>';
-			echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
-			
-			for ($i=1; $i <= $total_paginas; $i++){ //looping conforme o numero de paginas
-				echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag='.$i.'"> '.$i.' </a>&nbsp &nbsp'; 
+		echo '<div id="btnDivProxVoltar">';
+		
+				echo '<div id="btnProximo">';
+				if(($pagina >= 2)){
+				echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag='.($pagina-1).'">VOLTAR </a>';
 				}
-				echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag='.$total_paginas.'">ULTIMA</a>';
+				echo '</div>';
+				echo '<div id="btnAnterior">';
+				if($pagina < $total_paginas){
+					echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag='.($pagina+1).'">PROXIMO</a>';
+				}
+				echo '</div>';
 				echo '</div>'; //ultima pagina
 				?>
 

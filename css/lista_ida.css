@@ -53,10 +53,20 @@ table tr:nth-child(even){
     background-color: rgba(198, 228, 255, 0.767);
 }
 
-.logout,.usu-adm-header-footer{
+.usu-adm-header-footer{
     
-    color: black;
+    color: rgb(0, 0, 0);
     color: inherit;
+    font-size: 50px;
+    text-decoration:none;
+}
+.logout{
+    
+    color: rgb(0, 0, 0);
+    color: inherit;
+  
+  
+  
 }
 
 
@@ -144,4 +154,33 @@ font-weight:bold;
 #exibicao{
     background-color: blue;
     width: 400px;
+}
+
+#btnDivProxVoltar{
+    position:absolute;
+    bottom:0;
+   width: 100%;
+}
+#btnAnterior{
+    width: 80%;
+    height: 100%;
+    font-size: 13pt;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 255, 13, 0.438);
+    border-radius: 5px;
+    text-shadow:  0px 0px 10px rgb(16, 209, 42);
+    margin-bottom: 75px;
+    background-color: rgb(2, 107, 25);
+}
+#btnProximo{
+    width: 80%;
+    height: 100%;
+    font-size: 13pt;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.438);
+    border-radius: 5px;
+    text-shadow:  0px 0px 10px rgb(255, 0, 0);
+    margin-bottom: 75px;
+    background-color: rgb(255, 30, 30);
+   
 }
