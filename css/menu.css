@@ -1,11 +1,10 @@
 body
 {
     font: normal 18pt arial;
-    
-}
 }
  /* link que foi visitado */
- a {
+ a 
+ {
     color: #000;
  }
  /* link que foi visitado */
@@ -13,15 +12,18 @@ body
      color: #555;
  }
  /* quando o ponteiro do mouse passa no link */
- a:hover {
+ a:hover
+ {
      color: #999;
  }
  /* quando o link for selecionado */
- a:active {
+ a:active
+ {
      color: #333;
  }
 
- #desconectar{
+ #desconectar
+ {
     font: normal 10pt arial;
     text-align: right;
     color: black;
@@ -51,7 +53,7 @@ section
 }
 #alinhamento
 {
-background-color: rgb(255, 255, 255);
+background-color: rgba(131, 250, 171, 0);
 width: 300px;
 height: 300px;
 position: absolute;

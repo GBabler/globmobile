@@ -37,9 +37,6 @@ if(isset($_GET['id']) && empty($_GET['id']) == false) {
                 <input type="button" value="RECUSAR" id="btRecusar" onclick="btRecusar()">
            </div>
         </div>
-            <div id="divbt3">
-                <input type="button" value="CONFIRMAR RESPOSTA" id="btConfirmar" onclick="btConfirmar()">
-             </div>
     </section>
     </div>
     <footer>

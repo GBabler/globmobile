@@ -1,7 +1,7 @@
 body
 {
     font: normal 15pt arial;
-    background-color: rgba(48, 233, 41, 0.233);
+    background-color: rgb(190, 190, 190);
 }
  /* link que foi visitado */
  a 
@@ -17,14 +17,15 @@ body
  a:hover
 {
      color: #999;
- }
+}
  /* quando o link for selecionado */
  a:active 
  {
      color: #333;
  }
 
- .flex{
+ .flex
+ {
 
     display: flex;
     flex-wrap: wrap;
@@ -56,33 +57,35 @@ section
     width: 125px;
     margin: 3%;
 }
-#divbt3
-{
-    background-color: rgb(255, 255, 255);
-    height: 125px;
-    width: auto;
-    margin: 3%;
-    margin-top: 100px;
-}
 #btAceitar
 {
     width: 100%;
     height: 100%;
-    font-size: 13pt;
-    border: none;
+    font-size: 15pt;
     box-shadow: 5px 5px 10px rgba(0, 255, 64, 0.438);
     border-radius: 5%;
-    text-shadow:  0px 0px 10px rgb(21, 255, 0);
+    border: none;
+    text-shadow:  0px 0px 10px rgb(8, 61, 3);
+    background-color: rgb(159, 233, 152);
 }
 #btRecusar
 {
-    width: 100%;
+   width: 100%;
     height: 100%;
-    font-size: 13pt;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(255, 4, 4, 0.438);
+    font-size: 15pt;
+    box-shadow: 5px 5px 10px rgba(117, 29, 26, 0.438);
     border-radius: 5%;
-    text-shadow:  0px 0px 10px rgb(255, 0, 0);
+    border: none;
+    text-shadow:  0px 0px 10px rgb(61, 17, 3);
+    background-color: rgb(233, 152, 152);
+}
+#btRecusar:active 
+ {
+     color: rgb(255, 255, 255);
+ }
+ #btAceitar:active 
+{
+    color: rgb(255, 255, 255);
 }
 #btConfirmar
 {
@@ -91,19 +94,19 @@ section
     font-size: 15pt;
     border: none;
     box-shadow: 5px 5px 10px rgba(58, 4, 255, 0.438);
-    border-radius: 5%;
+    border-radius: 5px;
     text-shadow:  0px 0px 10px rgb(68, 0, 255);
 }
 #alinhamento
 {
-background-color: rgb(255, 255, 255);
-width: 330px;
-height: 407px;
-position: absolute;
-bottom: 0;
-right: 0;
-top: 0;
-left: 0;
-margin: auto;
+    background-color: rgba(255, 255, 255, 0);
+    width: 330px;
+    height: 407px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin: auto;
 
 }
