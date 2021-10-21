@@ -1,77 +1,61 @@
-*{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+body
+{
+    font: normal 18pt arial;
 }
 
-.header{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-body{
-
-    background-color: rgb(255, 255, 255);
-
+#divHeader
+{
+font-size: 25pt;
+text-align: center;
+text-shadow: 3px 3px 10px black;
 }
 
 
-.input-label{
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    
-}
-input{
-
-    border-radius: 5px;
-    padding: 0 5px;
-    height: 30px;
-    width: 200px;
-    border-color: black;
-    font-size: 15px;
-    background-color: rgb(255, 255, 255);
-}
-
-.color-form{
-    width: auto;
-    background-color: rgba(198, 228, 255, 0.767);
-    margin: auto;
-    height: 400px;
-    width: 300px ;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 15px;
-    border: 1px solid rgb(0, 0, 0);
-
-
-}
-
-
-.div-button{
-
-    text-align: center;
-    margin-top: 50px;
-    
-}
-
-.button{
-    text-align: center;
-    border-radius: 5px;
-    border-color: rgb(0, 0, 0);
-    height: 30px;
-    width: 115px;
-    border-radius: 5px;
-    font-size: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+section
+{
     background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: auto;
+    width: 300px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.342);
+    background-image: linear-gradient(to right, rgba(102, 101, 101, 0.199) , #ffffff);
+}
+#divForm{
+    text-align: center;
+}
+textarea:focus, input:focus {
+   
+    outline: 0;
+}
+
+/*CONFIGURAÇÃO LABEL E INPUT*/
+
+#divEspaco{
+    margin-top: 20px;
+}
+
+
+#btnInserir,#btnVoltar{
+    width: 125px;
+    height: 40px;
+    font-size: 15pt;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+}
+
+input
+{
+    width: 165px;
+    height: 25px;
+    border-top:unset;
+    border-right: unset;
+    border-left: unset;
+    background-color: #ffffff00;
+    border-radius: 3px;
+}
+#divBtn
+{
+    text-align: center;
+    margin-top: 75px;
 }

@@ -11,9 +11,10 @@ session_destroy();
 if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 
 	$nome = addslashes($_POST['nome']);
+	$email = addslashes($_POST['email']);
+	$senha = md5(addslashes($_POST['senha']));
 	$celular = addslashes($_POST['celular']);
-
-	$sql = "INSERT INTO usuarios SET nome = '$nome', celular = '$celular'";
+	$sql = "INSERT INTO usuarios SET NOME = '$nome', email = '$email', senha = '$senha', celular = '$celular'";
 
 	$sql = $pdo->query($sql);
 	header ("Location: lista_usuario.php");
@@ -28,33 +29,43 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Inserir Usuario</title>
-	<link rel="stylesheet" type="text/css" href="./css/inserir_usuario.css">
+	<link rel="stylesheet" type="text/css" href="css\inserir_usuario.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
 <body> 
 
-	<header class="header">
-			<h1>Registro de Usuario</h1>	
+	<header>
+		<div id="divHeader">
+		<p>Registro de usuario</p>
+		</div>
 	</header>
-	<form method="POST">
-		<div class="color-form">
-			<div class="centralizar">
-				
-				<div class="input-label">
-				<label>Nome: </label><br>
-				<input type="text" name="nome"/><br><br>
-							
-				<label>N° Celular : </label><br>
-				<input type="tel" name="celular"> <br><br>
-			
-			<div class="div-button">
-			<button type="submit" class="button">Inserir</button>
-			<a href="lista_usuario.php"><button type="button" class="button">Voltar</button><br><p></a>
-		</div>
-		</div>
-		</div>	
-	</form>
-
+	<section>
+			<div id="divForm">
+				<form method="POST">
+					<div id="divEspaco">
+						<label>Nome</label><br>
+						<input type="text" name="nome"/>
+					</div>
+					<div id="divEspaco">
+						<label>Email</label><br>
+						<input type="email" name="email">
+					</div>
+					<div id="divEspaco">
+						<label>Senha</label><br>
+						<input type="password" name="senha">
+					</div>
+					<div id="divEspaco">
+						<label>N° Celular</label><br>
+						<input type="tel" name="celular">
+					</div>
+					
+					<div id="divBtn">
+						<button type="submit" id="btnInserir">Inserir</button>
+						<a href="lista_usuario.php"><button type="button" id="btnVoltar">Voltar</button></a>
+					</div>
+				</form>
+			</div>
+		</section>
 </body>
 
 </html>

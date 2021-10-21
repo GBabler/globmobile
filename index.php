@@ -21,18 +21,29 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
 		$_SESSION['senha'] = $dado['senha'];
 
 			header("Location: menu.php");
-
-		} else {
-
-			// mensagem em javascript com erro de login
-			echo "
-
-			<META HTTP-EQUIV-REFRESH CONTENT='0; URL=index.php'>
-			<script type=\"text/javascript\">
-			alert(\"Erro: Usuário ou senha inválidos\");
-			</script>
-			";
 		}
+		
+		//---------------------------------------
+		
+		//---------------------------------------
+		else {
+		$email = addslashes($_POST['email']); //pega o e-mail digitado
+		$senha = md5((addslashes($_POST['senha']))); //pega a senha digitada 
+
+		//verifica se o e-mail e a senha constam no banco de dados.
+		$sql = $pdo->query("SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'");
+		if ($sql->rowCount() > 0){ 
+		
+		$dado = $sql->fetch(); //cria um array com os valores do usuário
+		$_SESSION['id'] = $dado['id'];
+		$_SESSION['nome'] = $dado['nome'];
+		$_SESSION['email'] = $dado['email'];
+		$_SESSION['senha'] = $dado['senha'];
+
+			header("Location: confirmacaoAluno.php");
+		}
+		}
+
 	}
 }
 
@@ -50,34 +61,38 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
 </head>
 <body>
 
-<div class="container">
-        <header class="cabecalho">
-        </header>
-        
-        <div class="div_login">
-            <div class="logo">
-                <img src="./img/logomarcaindex.png" alt="logo">
-            </div>
-            <div class="form_Login">
-                <form method="POST" class="form">
-                    <div class="div_acesse">
-                    <label>Acesse</label>
-                    </div>
-                    <input class="inp_name" type="text" name="email" placeholder="E-mail" autocomplete="off" required=""><br>
-                    <input class="inp_senha" type="password" name="senha" placeholder="Senha" autocomplete="off ">
 
-                    <div class="buttons">
-                    <button class="buttons_form entrarButton" type="submit">Entrar</button>
-                    <button class="buttons_form registerButton" type="button">Registrar</button>
-                    </div>
-                </form>
-            </div>
+	<header>
+        <p>
+        <h1>GlobMobile</h1>
+        <h2>Login</h2>
+        </p>
+    </header>
+	<section>
+    <div id="telaLogin">
+        
+        <div id="telaLogin">
+			<form method="POST">
+            <p>
+                Usuario <br>
+                <input id="iptLogin" type="text" name="email" placeholder="E-mail" autocomplete="off" required=""><br>
+            </p>
+            <p> 
+                Senha <br>
+                <input id="iptSenha" type="password" name="senha" placeholder="Senha" autocomplete="off ">
+            </p>
+           		 <div id = divBtnLogin>
+					<button id="iptBtnLogin" type="submit">Entrar</button>
+            	 </div>
+			</form>
         </div>
         
-        <footer class="footer">   
+    </div>
+    </section>
+	
+        
+        <footer>   
             <p>© GlobMobile</p>
         </footer>
-    </div>
-	
 </body>
 </html>
