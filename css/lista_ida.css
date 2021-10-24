@@ -53,7 +53,7 @@ table tr:nth-child(even){
     background-color: rgba(198, 228, 255, 0.767);
 }
 
-.usu-adm-header-footer{
+#btnVoltar{
     
     color: rgb(0, 0, 0);
     color: inherit;
@@ -120,18 +120,6 @@ table tr:nth-child(even){
 
 /*==========FOOTER==========*/
 
-
-
-.footer_Gerar{
-    background-color: rgb(109, 110, 110);
-  
-    bottom:0;
-    width:100%;
-    
-    margin-top: 10%;
-}
-
-
 input#btnGerar{
     height: 75px;
     width: 150px;
@@ -139,48 +127,74 @@ input#btnGerar{
 
 }
 
-#btnVoltar
+#btnVoltarMenu
 {
-width: 200px;
-height: 75px;
-border-radius: 5px;
-border: none;
-background-color: rgba(99, 96, 96, 0.589);
-text-align: center;
-font-size: 20px;
-white-space: normal;
-font-weight:bold;
+    width: 200px;
+    height: 75px;
+    border-radius: 5px;
+    margin-top: 55px;
+    border: none;
+    background-color: rgba(94, 94, 94, 0.589);
+    text-align: center;
+    font-size: 20px;
+    white-space: normal;
+    font-weight:bold;
 }
-#exibicao{
+#exibicao
+{
     background-color: blue;
     width: 400px;
 }
 
-#btnDivProxVoltar{
+#btnDivProxVoltar
+{
     position:absolute;
     bottom:0;
-   width: 100%;
+    width: 100%;
 }
-#btnAnterior{
-    width: 80%;
-    height: 100%;
-    font-size: 13pt;
+#btnProximo
+{
+    width: 225px;
+    height:75px;
+    font-size: 15pt;
     border: none;
-    box-shadow: 5px 5px 10px rgba(0, 255, 13, 0.438);
+    box-shadow: 5px 5px 10px rgb(12, 94, 16);
     border-radius: 5px;
-    text-shadow:  0px 0px 10px rgb(16, 209, 42);
+    text-shadow:  0px 0px 10px rgb(25, 46, 28);
     margin-bottom: 75px;
-    background-color: rgb(2, 107, 25);
+    background-color: rgba(76, 238, 62, 0.76);
+    color: black;
+    font-weight: bold;
 }
-#btnProximo{
-    width: 80%;
-    height: 100%;
-    font-size: 13pt;
+
+#btnVoltar
+{
+    width: 225px;
+    height:75px;
+    font-size: 15pt;
     border: none;
-    box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.438);
+    box-shadow: 5px 5px 10px rgb(99, 20, 20);
     border-radius: 5px;
-    text-shadow:  0px 0px 10px rgb(255, 0, 0);
+    text-shadow:  0px 0px 10px rgb(73, 20, 20);
     margin-bottom: 75px;
-    background-color: rgb(255, 30, 30);
-   
+    background-color: rgba(245, 42, 42, 0.678);
+    color: black;
+    font-weight: bold;
+}
+#btnVoltar:active, #btnProximo:active
+{
+    color: rgb(255, 255, 255);
+}
+
+.classEspacoBtn
+{
+    height: 150px;
+}
+
+footer
+{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    margin-bottom: 20px;
 }

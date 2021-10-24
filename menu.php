@@ -33,7 +33,7 @@ if ($_SESSION['id'] > 1){
         <div id="desconectar">
         <?php echo "$_SESSION[nome]"; ?>
 				|
-				<a class="logout" href="logout.php">Logout</a>
+				<a class="logout" href="logout.php">sair</a>
         </div>
 
     </header>
@@ -41,11 +41,10 @@ if ($_SESSION['id'] > 1){
         <section>
             <div class="flex">
                 <div id="divbt1">
-                    <input type="button" value="Perfil" id ="iptbtn" onclick="perfilMotorista()">
+                    <input type="button" value="Perfil" id ="iptbtn" onclick="perfilMotorista() ">
                 </div>
                 <div id="divbt2">
                     <input type="button" value="Conf Aluno" id ="iptbtn" onclick="confirmacaoAluno()">
-
                 </div>
                 <div id="divbt3">
                     <input type="button" value="Iniciar Trajeto" id ="iptbtn" onclick="iniciarTrajeto()">

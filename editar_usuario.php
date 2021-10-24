@@ -2,7 +2,7 @@
 require 'config.php';
 session_start();
 
-if(isset($_SESSION['id']) == false) {
+if(isset($_SESSION['id']) == false){
 //se não estiver sem id de sessão continua na página
 header("Location: index.php");
 session_destroy();
@@ -12,6 +12,12 @@ if(isset($_GET['id']) && empty($_GET['id']) == false) {
 	//pega o ID do cliente que o usuário selecionou para alterar o registro.
 	$id = addslashes($_GET['id']);
 }
+//se o ID da pessoa que for fazer o login for maior que 1 a sessão se quebra
+if ($_SESSION['id'] > 1){
+    header("Location: index.php");
+    session_destroy();
+}
+
 
 if (isset($_POST['nome']) && empty($_POST['nome']) == false) { 
 // pega os valores digitados nos campos do formulario e insere nas variáveis 
@@ -49,32 +55,41 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
 <body>
-	<header  class="header">
-		<h1>Editar Usuario</h1>
-	</header>
-	<div class="color-form">
-		<div class="centralizar">
-			<div class="input-label">
-			<form method="POST">
-				<div>
-				<label>Posição na fila: </label><br>
-				<input type="text" name="posicao" value="<?php echo $dado['posicao']?>"/></br></br>
-
-				<label>Nome: </label><br>
-				<input type="text" name="nome" value="<?php echo $dado['nome']?>"/></br></br>
-
-				<label>N° Celular: </label><br>
-				<input type="text" name="celular" value="<?php echo $dado['celular']?>"/></br></br>
-				</div>
-
-				<div class="div-button">
-				<button type="submit" class="button">Salvar</button>
-				<a href="lista_usuario.php"><button type="button class" class="button">Cancelar</button></a>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
+		<header>
+			<div id="divHeader">
+			<p>Editar Usuario</p>
+			</div>
+		</header>
+		<section>
+			<div id="divForm">
+				<form method="POST">
+					<div class="classEspaco">
+						<label>Posição na fila</label><br>
+						<input type="text" name="posicao" value="<?php echo $dado['posicao']?>"/>
+					<div>
+					<div class="classEspaco">
+						<label>Nome</label><br>
+						<input type="text" name="nome" value="<?php echo $dado['nome']?>"/>
+					</div>
+					<div class="classEspaco">
+						<label>Email</label><br>
+						<input type="email" name="email" value="<?php echo $dado['email']?>"/>
+					</div>
+					<div class="classEspaco">
+						<label>Senha</label><br>
+						<input type="password" name="senha" value="<?php echo $dado['senha']?>"/>
+					</div>
+					<div class="classEspaco">
+						<label>N° Celular</label><br>
+						<input type="text" name="celular" value="<?php echo $dado['celular']?>"/>
+					</div>
+					<div id="divBtn">
+					<button type="submit" id="btnInserir">Salvar</button>
+					<a href="lista_usuario.php"><button type="button" id="btnVoltar">Cancelar</button></a>
+					<div>
+				</form>
+			</div>
+		</section>
 </body>
 
 </html> 

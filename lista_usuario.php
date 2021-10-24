@@ -2,12 +2,21 @@
 require 'config.php';
 session_start();
 
-if(isset($_SESSION['id']) == false) {
+if(isset($_SESSION['id']) == false){
 //se não estiver sem id de sessão continua na página
 header("Location: index.php");
 session_destroy();
 }
 
+if(isset($_GET['id']) && empty($_GET['id']) == false) {
+	//pega o ID do cliente que o usuário selecionou para alterar o registro.
+	$id = addslashes($_GET['id']);
+}
+//se o ID da pessoa que for fazer o login for maior que 1 a sessão se quebra
+if ($_SESSION['id'] > 1){
+    header("Location: index.php");
+    session_destroy();
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,21 +32,14 @@ session_destroy();
 </head>
 
 <body id = "res">
-<header>
-	<div class="user_info">
-			<?php echo "$_SESSION[nome]"; ?>
-			|
-			<a class ="logout" href="logout.php">Logout</a>
-			</div>
-					<div id = "iptbtncenter">
-						
-							<input type="button" value="NOVO USUARIO" id = "iptbtn" onclick="novoUsuario()">
-							<input type="button" value="VOLTAR AO MENU" id = "iptbtn" onclick="voltarMenu()">
-						
-					</div>
+	<header>
+		<div id = "iptbtncenter">
+			<input type="button" value="NOVO USUARIO" id = "iptbtn" onclick="novoUsuario()">
+			<input type="button" value="VOLTAR AO MENU" id = "iptbtn" onclick="voltarMenu()">
+		</div>
 	</header>
 	<div class="content">
-	<table align ="center" class="rtable">
+	<table class="rtable">
 		<thead>
 			
 			<br>

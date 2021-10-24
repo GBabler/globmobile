@@ -92,7 +92,7 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
     </section>
 	
         
-        <footer>   
+        <footer> 
             <p>© GlobMobile</p>
         </footer>
 </body>

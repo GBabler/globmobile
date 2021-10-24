@@ -2,12 +2,21 @@
 require 'config.php';
 session_start();
 
-if(isset($_SESSION['id']) == false) {
+if(isset($_SESSION['id']) == false){
 //se não estiver sem id de sessão continua na página
 header("Location: index.php");
 session_destroy();
 }
 
+if(isset($_GET['id']) && empty($_GET['id']) == false) {
+	//pega o ID do cliente que o usuário selecionou para alterar o registro.
+	$id = addslashes($_GET['id']);
+}
+//se o ID da pessoa que for fazer o login for maior que 1 a sessão se quebra
+if ($_SESSION['id'] > 1){
+    header("Location: index.php");
+    session_destroy();
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,86 +32,78 @@ session_destroy();
 </head>
 
 <body id = "res">
-<header>
-	<div class="user_info">
-			<?php echo "$_SESSION[nome]"; ?>
-			|
-			<a class ="logout" href="logout.php">Logout</a>
-			</div>
-					<div>
-							<input type="button" value="VOLTAR PARA MENU" id = "btnVoltar" onclick="voltarMenu()">
-					</div>
-					
+	<header>
+		<div>
+			<input type="button" value="VOLTAR PARA MENU" id = "btnVoltarMenu" onclick="voltarMenu()">
+		</div>	
 	</header>
 	<div class="content">
-	<table align="center" class="rtable">
+		<table class="rtable">
 		<thead>
-			
 			<br>
 			<tr">
-				<th>NOME</th>
-
+			<th>NOME</th>
 			</tr>
 		</thead>
 
 		<tbody>
 
-				<?php
-			/************INICIA O PHP PARA INICIAR A PAGINAÇÃO*********/
-			$limite = 1; //determina o numero de registros que serão mostrados por página
+						<?php
+					/************INICIA O PHP PARA INICIAR A PAGINAÇÃO*********/
+					$limite = 1; //determina o numero de registros que serão mostrados por página
 
-			@$pagina = $_GET['pag'];
-				if(isset($pagina)){
-					$pagina = $pagina; //armazenamos o valor da pagina atual
-				} else { //Se caso não encontrar nenhum valor fica por padrão na pagina
-					$pagina=1;
-				}
+					@$pagina = $_GET['pag'];
+						if(isset($pagina)){
+							$pagina = $pagina; //armazenamos o valor da pagina atual
+						} else { //Se caso não encontrar nenhum valor fica por padrão na pagina
+							$pagina=1;
+						}
 
-				//Calcula a pagina inicial em relação a pagina atual
-				$inicio = ($pagina * $limite) - $limite;
+						//Calcula a pagina inicial em relação a pagina atual
+						$inicio = ($pagina * $limite) - $limite;
 
-				//conta o numero de linhas da tabela
-				$qtdRegistros = $pdo->query('SELECT count(posicao) FROM usuarios 
-				WHERE val_ida = "1" ')->fetchColumn();
+						//conta o numero de linhas da tabela
+						$qtdRegistros = $pdo->query('SELECT count(posicao) FROM usuarios 
+						WHERE val_ida = "1" ')->fetchColumn();
 
-				//Determina o total de páginas
-				$total_paginas = Ceil($qtdRegistros / $limite);
+						//Determina o total de páginas
+						$total_paginas = Ceil($qtdRegistros / $limite);
 
-				//seleciona os registros do php
-				$sql = "SELECT * FROM usuarios 
-				WHERE val_ida = '1'
-				order by posicao asc  LIMIT $inicio, $limite"; //limite no seleqt mysql
-				//executa o select
-				$sql = $pdo->query($sql);
+						//seleciona os registros do php
+						$sql = "SELECT * FROM usuarios 
+						WHERE val_ida = '1'
+						order by posicao asc  LIMIT $inicio, $limite"; //limite no seleqt mysql
+						//executa o select
+						$sql = $pdo->query($sql);
 
-				/************ FINALIZA O PHP PARA EFETUAR A PAGINAÇÃO ********/ 
+						/************ FINALIZA O PHP PARA EFETUAR A PAGINAÇÃO ********/ 
 
-		foreach	($sql->fetchall() as $user) {
-			echo '<tr>';
+				foreach	($sql->fetchall() as $user) {
+					echo '<tr>';
 
-			echo '<td class="letra-tabela">'.$user['nome'].'</td>';
-			
-		echo '</div>';
-	}
+					echo '<td class="letra-tabela">'.$user['nome'].'</td>';
+					
+				echo '</div>';
+			}
 
-?>
+		?>
 
-</tbody>
-</table>
-</div>
-<br>
-<div align="center">
+		</tbody>
+		</table>
+	</div>
+	<br>
+	<div>
 <?php
 		echo '<div id="btnDivProxVoltar">';
 		
-				echo '<div id="btnProximo">';
+				echo '<div class="classEspacoBtn">';
 				if(($pagina >= 2)){
-				echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag='.($pagina-1).'">VOLTAR </a>';
+				echo '<a href="lista_ida.php?pag='.($pagina-1).'"><button id="btnVoltar">VOLTAR</button></a>';
 				}
 				echo '</div>';
-				echo '<div id="btnAnterior">';
+				echo '<div class="classEspacoBtn">';
 				if($pagina < $total_paginas){
-					echo '<a class="usu-adm-header-footer" href="lista_ida.php?pag='.($pagina+1).'">PROXIMO</a>';
+					echo '<a  href="lista_ida.php?pag='.($pagina+1).'"><button id="btnProximo">PROXIMO</button></a>';
 				}
 				echo '</div>';
 				echo '</div>'; //ultima pagina
@@ -111,7 +112,7 @@ session_destroy();
 				<!-- Final do menu de paginação -->
 				</div>
 		<footer>
-				<p> 
+				<p>
 				&copy GlobMobile
 				</p>
 		</footer>
