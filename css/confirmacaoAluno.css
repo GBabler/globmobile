@@ -29,6 +29,15 @@ section
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.342);
     display: block;
 }
+#confirmacoes
+{
+    margin-top: 45%;
+}
+#texto{
+    text-align: center;
+    margin-top: 30%;
+    font-size: 25pt;
+}
 #divbt1
 {
     background-color: rgb(255, 255, 255);

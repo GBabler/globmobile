@@ -36,6 +36,7 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 }else{
 	header('Location: confirmacaoAluno.php?id='.$_SESSION['id'].'');
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -51,30 +52,41 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 <body>
 	<header>
 	</header>
+	
+	<section id="texto">
+		<div>
+		<?php
+
+				if (($dado['val_ida'])== 1){
+					echo 'VOCE CONFIRMOU SUA IDA.';
+				}
+				if (($dado['val_ida'])== 0){
+					
+					echo 'VOCE INFORMOU QUE NÃO IRA HOJE.';
+
+				}
+		?>
+		</div>
+    </section>
 	<div id="alinhamento">
-    <section>
+		<section id="confirmacoes">
 					<div id="flex">
 						<form method="POST" id="divbt1">
-							<input type="hidden" name="nome" value="<?php echo $dado['nome']?>"/>
-							<input type="hidden" name="val_ida" value="1"/>
-						<div id="divbt1">
-							<input type="submit" value="ACEITAR" id="btAceitar">
-						</div>
-					</form>
-				
-				
-					<form method="POST" id="divbt2">
-					
-						<input type="hidden" name="nome" value="<?php echo $dado['nome']?>"/>
-						<input type="hidden" name="val_ida" value="0"/>
-					
-					<div id="divbt2">
-							<input type="submit" value="RECUSAR" id="btRecusar">
+								<input type="hidden" name="nome" value="<?php echo $dado['nome']?>"/>
+								<input type="hidden" name="val_ida" value="1"/>
+							<div id="divbt1">
+								<input type="submit" value="ACEITAR" id="btAceitar">
+							</div>
+						</form>
+						<form method="POST" id="divbt2">
+								<input type="hidden" name="nome" value="<?php echo $dado['nome']?>"/>
+								<input type="hidden" name="val_ida" value="0"/>
+							<div id="divbt2">
+									<input type="submit" value="RECUSAR" id="btRecusar">
+							</div>
+						</form>
 					</div>
-					</form>
-				
-				</div>
-    </section>
+		</section>
     </div>
 </body>
 
