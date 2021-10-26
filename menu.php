@@ -44,13 +44,13 @@ if ($_SESSION['id'] > 1){
                     <input type="button" value="Perfil" id ="iptbtn" onclick="perfilMotorista() ">
                 </div>
                 <div id="divbt2">
-                    <input type="button" value="Conf Aluno" id ="iptbtn" onclick="confirmacaoAluno()">
+                    <input type="button" value="Alunos" id ="iptbtn" onclick="listaAlunos()">
                 </div>
                 <div id="divbt3">
                     <input type="button" value="Iniciar Trajeto" id ="iptbtn" onclick="iniciarTrajeto()">
                 </div>
                 <div id="divbt4">
-                    <input type="button" value="Editar Aluno" id ="iptbtn" onclick="listaAlunos()">
+                    <input type="button" value="Editar Aluno" id ="iptbtn" onclick="novoarquivovolta()">
                 </div>
             </div>
         </section>
