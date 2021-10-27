@@ -1,0 +1,200 @@
+* {
+
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+/*---------------------CABECALHO------------------------*/
+.user_info{
+    text-align: right;
+    margin-top: 2%;
+    margin-right: 4%;
+    margin-bottom: 5%;
+}
+
+/*---------------------CABECALHO------------------------*/
+body{
+
+background-color: rgb(255, 255, 255);
+font-family: Arial, Helvetica, sans-serif;
+text-align: center;
+
+}
+
+table, th, td{
+    
+    width: 1000px;
+    color: rgb(0, 0, 0);
+    border: 2px solid black ;
+    border-collapse: collapse;
+    border: none;
+}
+
+th, td{
+
+   padding: 10px 10px;
+   
+}
+
+th{
+
+    background-color: blue;
+    color: white;
+    border: none;
+}
+/*even aplica em todos os elementos pares*/
+table tr:nth-child(even){
+    background-color: white;
+
+}
+/*even aplica em todos os elementos impares*/
+table tr:nth-child(even){
+
+    background-color: rgba(198, 228, 255, 0.767);
+}
+
+#btnVoltar{
+    
+    color: rgb(0, 0, 0);
+    color: inherit;
+    font-size: 50px;
+    text-decoration:none;
+}
+.logout{
+    
+    color: rgb(0, 0, 0);
+    color: inherit;
+  
+  
+  
+}
+
+
+.letra-tabela{
+
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 500px;
+
+}
+
+
+
+.content{display: flex; margin: auto; margin-top: 3%;}
+.rtable {width: 100%; text-align: center;}
+.rtable th , .rtables td{padding: 7px;}
+@media screen and (max-width: 1100px){
+    .content{width: 98%;}
+    
+
+    img{
+        width: 25px;
+    }
+}
+
+@media only screen and (min-width: 1100px){
+
+    .content{width: 60%;}
+    
+    .rtable tbody tr td:nth-child(1){width: 3%;}
+    .rtable tbody tr td:nth-child(2){width: 10%;}
+    .rtable tbody tr td:nth-child(3){width: 10%;}
+    .rtable tbody tr td:nth-child(4){width: 5%;}
+    img{
+        width: 50px;
+    }
+
+}
+
+.lapis{
+
+    border: 1px;
+    border-right: blue;
+}
+
+.cab_tela{
+
+    margin-bottom: 5%;
+
+}
+
+/*==========FOOTER==========*/
+
+input#btnGerar{
+    height: 75px;
+    width: 150px;
+    font-size: 20px;
+
+}
+
+#btnVoltarMenu
+{
+    width: 200px;
+    height: 75px;
+    border-radius: 5px;
+    margin-top: 55px;
+    border: none;
+    background-color: rgba(94, 94, 94, 0.589);
+    text-align: center;
+    font-size: 20px;
+    white-space: normal;
+    font-weight:bold;
+}
+#exibicao
+{
+    background-color: blue;
+    width: 400px;
+}
+
+#btnDivProxVoltar
+{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+}
+#btnProximo
+{
+    width: 225px;
+    height:75px;
+    font-size: 15pt;
+    border: none;
+    box-shadow: 5px 5px 10px rgb(12, 94, 16);
+    border-radius: 5px;
+    text-shadow:  0px 0px 10px rgb(25, 46, 28);
+    margin-bottom: 75px;
+    background-color: rgba(76, 238, 62, 0.76);
+    color: black;
+    font-weight: bold;
+}
+
+#btnVoltar
+{
+    width: 225px;
+    height:75px;
+    font-size: 15pt;
+    border: none;
+    box-shadow: 5px 5px 10px rgb(99, 20, 20);
+    border-radius: 5px;
+    text-shadow:  0px 0px 10px rgb(73, 20, 20);
+    margin-bottom: 75px;
+    background-color: rgba(245, 42, 42, 0.678);
+    color: black;
+    font-weight: bold;
+}
+#btnVoltar:active, #btnProximo:active
+{
+    color: rgb(255, 255, 255);
+}
+
+.classEspacoBtn
+{
+    height: 150px;
+}
+
+footer
+{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    margin-bottom: 20px;
+}

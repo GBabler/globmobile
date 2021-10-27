@@ -50,8 +50,13 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 </head>
 <body>
-	<header>
-	</header>
+<header>
+        <div id="desconectar">
+        <?php echo "$_SESSION[nome]"; ?>
+				|
+				<a class="logout" href="logout.php">sair</a>
+        </div>
+    </header>
 	
 	<section id="texto">
 		<div>

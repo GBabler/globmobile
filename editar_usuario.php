@@ -23,11 +23,11 @@ if (isset($_POST['nome']) && empty($_POST['nome']) == false) {
 // pega os valores digitados nos campos do formulario e insere nas variáveis 
 $nome = addslashes($_POST['nome']); //variável nome
 $email = addslashes($_POST['email']); // varável email.
-$senha = md5(addslashes($_POST['senha']));
 $celular = addslashes($_POST['celular']); // variável email.
 $posicao = addslashes($_POST['posicao']);
+$senha = md5(addslashes($_POST['senha']));
 
-$sql = "UPDATE usuarios SET posicao = '$posicao', nome = '$nome', celular = '$celular', email = '$email', senha = '$senha' WHERE id = '$id'";
+$sql = "UPDATE usuarios SET posicao = '$posicao', nome = '$nome', celular = '$celular', email = '$email' WHERE id = '$id'";
 
 $sql = $pdo->query($sql); //executa o insert.
 header("Location: lista_usuario.php"); //após a execução do insert, retorna para a página de consulta dos dados.
@@ -76,10 +76,6 @@ if ($sql->rowCount() > 0){  // verifica se o registro existe, maior que zero.
 					<div class="classEspaco">
 						<label>Email</label><br>
 						<input type="email" name="email" value="<?php echo $dado['email']?>"/>
-					</div>
-					<div class="classEspaco">
-						<label>Senha</label><br>
-						<input type="password" name="senha" value="<?php echo $dado['senha']?>"/>
 					</div>
 					<div class="classEspaco">
 						<label>N° Celular</label><br>

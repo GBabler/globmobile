@@ -3,9 +3,13 @@ function listaAlunos()
     window.location.href = "lista_usuario.php"
 }
 
-function iniciarTrajeto()
+function trajetoIda()
 {
     window.location.href = "lista_ida.php"
+}
+function trajetoVolta()
+{
+    window.location.href = "lista_Volta.php"
 }
 
 function perfilMotorista()

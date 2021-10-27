@@ -95,3 +95,9 @@ section
     margin: auto;
 
 }
+#desconectar
+{
+   font: normal 10pt arial;
+   text-align: right;
+   color: black;
+}

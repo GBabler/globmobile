@@ -41,16 +41,16 @@ if ($_SESSION['id'] > 1){
         <section>
             <div class="flex">
                 <div id="divbt1">
-                    <input type="button" value="Perfil" id ="iptbtn" onclick="perfilMotorista() ">
+                    <input type="button" value="Perfil" id ="iptbtn" onclick="perfilMotorista()">
                 </div>
                 <div id="divbt2">
                     <input type="button" value="Alunos" id ="iptbtn" onclick="listaAlunos()">
                 </div>
                 <div id="divbt3">
-                    <input type="button" value="Iniciar Trajeto" id ="iptbtn" onclick="iniciarTrajeto()">
+                    <input type="button" value="Trajeto ida" id ="iptbtn" onclick="trajetoIda()">
                 </div>
                 <div id="divbt4">
-                    <input type="button" value="Editar Aluno" id ="iptbtn" onclick="novoarq()">
+                    <input type="button" value="Trajeto Volta" id ="iptbtn" onclick="trajetoVolta()">
                 </div>
             </div>
         </section>

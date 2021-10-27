@@ -28,7 +28,7 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
 		//---------------------------------------
 		else {
 		$email = addslashes($_POST['email']); //pega o e-mail digitado
-		$senha = md5((addslashes($_POST['senha']))); //pega a senha digitada 
+		$senha = md5(addslashes($_POST['senha'])); //pega a senha digitada 
 
 		//verifica se o e-mail e a senha constam no banco de dados.
 		$sql = $pdo->query("SELECT * FROM usuarios WHERE email = '$email' and senha = '$senha'");

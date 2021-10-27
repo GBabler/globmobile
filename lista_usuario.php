@@ -46,7 +46,7 @@ if ($_SESSION['id'] > 1){
 			<tr">
 				<th>POS</th>
 				<th>NOME</th>
-				<th>N° Cel</th>
+				<th>CELULAR</th>
 				<th>AÇÃO</th>
 				
 			</tr>
@@ -105,7 +105,7 @@ if ($_SESSION['id'] > 1){
 </table>
 </div>
 <br>
-<div align="center">
+<div>
 <?php
 		echo '<div>';
 			echo '<a class="usu-adm-header-footer" href="lista_usuario.php?pag=1">PRIMEIRA</a>&nbsp &nbsp'; //Primeira página
