@@ -9,7 +9,7 @@ function trajetoIda()
 }
 function trajetoVolta()
 {
-    window.location.href = "lista_Volta.php"
+    window.location.href = "lista_volta.php"
 }
 
 function perfilMotorista()
