@@ -13,10 +13,6 @@ if(isset($_GET['id']) && empty($_GET['id']) == false) {
 	$id = addslashes($_GET['id']);
 }
 //se o ID da pessoa que for fazer o login for maior que 1 a sessão se quebra
-if ($_SESSION['id'] > 1){
-    header("Location: index.php");
-    session_destroy();
-}
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +22,7 @@ if ($_SESSION['id'] > 1){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu de Navegação</title>
-    <link rel="stylesheet" href="css\menu.css">
+    <link rel="stylesheet" href="css\menu_usuario.css">
 </head>
 <body>
     <header>
@@ -35,28 +31,25 @@ if ($_SESSION['id'] > 1){
 				|
 				<a class="logout" href="logout.php">sair</a>
         </div>
+        <div id="divHeader">
+			<p>Menu Do Aluno</p>
+		</div>
     </header>
     <div id="alinhamento">
         <section>
             <div class="flex">
                 <div id="divbt1">
-                    <input type="button" value="Perfil" id ="iptbtn" onclick="perfilMotorista()">
+                    <input type="button" value="Confirmar Ida" id ="iptbtn" onclick="confirmacaoIda()">
                 </div>
                 <div id="divbt2">
-                    <input type="button" value="Alunos" id ="iptbtn" onclick="listaAlunos()">
-                </div>
-                <div id="divbt3">
-                    <input type="button" value="Trajeto ida" id ="iptbtn" onclick="trajetoIda()">
-                </div>
-                <div id="divbt4">
-                    <input type="button" value="Trajeto Volta" id ="iptbtn" onclick="trajetoVolta()">
+                    <input type="button" value="Confirmar Volta" id ="iptbtn" onclick="confirmacaoVolta()">
                 </div>
             </div>
         </section>
         <footer>
-
+            
         </footer>
     </div>
-    <script src="js\menu.js"></script>
+    <script src="js\menu_usuario.js"></script>
 </body>
 </html>

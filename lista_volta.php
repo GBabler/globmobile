@@ -26,13 +26,16 @@ if ($_SESSION['id'] > 1){
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Lista de Usuarios</title>
-	<link rel="stylesheet" type="text/css" href="css\lista_volta.css">
+	<link rel="stylesheet" type="text/css" href="css\lista_ida.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
 </head>
 
 <body id = "res">
 	<header>
+		<div id="divHeader">
+			<p>LISTA DE VOLTA</p>
+		</div>
 		<div>
 			<input type="button" value="VOLTAR PARA MENU" id = "btnVoltarMenu" onclick="voltarMenu()">
 		</div>	
@@ -64,7 +67,7 @@ if ($_SESSION['id'] > 1){
 
 						//conta o numero de linhas da tabela
 						$qtdRegistros = $pdo->query('SELECT count(posicao) FROM usuarios 
-						WHERE val_ida = "1" ')->fetchColumn();
+						WHERE val_volta= "1" ')->fetchColumn();
 
 						//Determina o total de páginas
 						$total_paginas = Ceil($qtdRegistros / $limite);
@@ -117,7 +120,7 @@ if ($_SESSION['id'] > 1){
 				</p>
 		</footer>
 
-		<script src="js\lista_volta.js"></script>
+		<script src="js\lista_ida.js"></script>
 
 </body>
 

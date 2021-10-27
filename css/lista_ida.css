@@ -198,3 +198,11 @@ footer
     width: 100%;
     margin-bottom: 20px;
 }
+
+#divHeader
+{
+margin-top: 10%;
+font-size: 25pt;
+text-align: center;
+text-shadow: 3px 3px 10px black;
+}

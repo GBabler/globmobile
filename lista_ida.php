@@ -33,6 +33,9 @@ if ($_SESSION['id'] > 1){
 
 <body id = "res">
 	<header>
+		<div id="divHeader">
+			<p>LISTA DE IDA</p>
+		</div>
 		<div>
 			<input type="button" value="VOLTAR PARA MENU" id = "btnVoltarMenu" onclick="voltarMenu()">
 		</div>	

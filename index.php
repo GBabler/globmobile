@@ -41,7 +41,7 @@ if (isset($_POST['email']) && empty($_POST['email']) == false) {
 		$_SESSION['senha'] = $dado['senha'];
 
 		//direciona o aluno para a tela de confirmação com seu respectivo ID ja pré selecionado
-		header('Location: confirmacaoAluno.php?id='.$_SESSION['id'].'');
+		header('Location: menu_usuario.php?id='.$_SESSION['id'].'');
 		}
 		}
 
